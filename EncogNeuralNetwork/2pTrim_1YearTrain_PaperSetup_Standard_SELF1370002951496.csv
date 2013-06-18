@@ -1,0 +1,2 @@
+"DataEntries: 8756, TestEntries: 24, Epochs: 3000, UseTestData: true, LimitEntries: true, Firstlayer#: 5, SecondLayer: true, SecondLayer#: 2, Predict: true, Curvebehaviour: false, Stacksize: 6, useLastXDays: false, Max: 632.0, Min: 61.0, Curve behaviour: false, Historical: false, Skewness: false"
+"Actual","Ideal"

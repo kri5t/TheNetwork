@@ -1,0 +1,2588 @@
+DataEntries: 7000, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 0
+Neural Network Results:
+Set size: 7000
+Total errors: 44174.0
+Largest error: 165.0
+actual=294.38686288187387,ideal=111.00000000001998, error=165.0% lineNumber = 4597
+Average error margin: 6.3105714285714285
+MSE: 0.018115165729654593
+ESS: 63.40308005379108
+RMS: 0.13459259165962514
+
+
+
+Neural Network Results:
+Test data:
+Set size: 25
+Total errors: 113.0
+Largest error: 28.0
+actual=342.6933593911336,ideal=268.0, error=28.0% lineNumber = 16
+Average error margin: 4.52
+MSE: 0.02127860038398177
+ESS: 0.26598250479977215
+RMS: 0.14587186289336876
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 30, SecondLayer: false, SecondLayer#: 0
+Neural Network Results:
+Set size: 7000
+Total errors: 44235.0
+Largest error: 171.0
+actual=300.3658030008359,ideal=111.00000000001998, error=171.0% lineNumber = 4597
+Average error margin: 6.319285714285714
+MSE: 0.018136114008424888
+ESS: 63.47639902948711
+RMS: 0.13467039024382788
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1512.0
+Largest error: 78.0
+actual=195.8251809369762,ideal=110.00000000003598, error=78.0% lineNumber = 165
+Average error margin: 6.273858921161826
+MSE: 0.02332781223831723
+ESS: 2.811001374717226
+RMS: 0.15273445007043182
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 0
+Neural Network Results:
+Set size: 7000
+Total errors: 44390.0
+Largest error: 171.0
+actual=246.8964320316284,ideal=90.999999999984, error=171.0% lineNumber = 4422
+Average error margin: 6.341428571428572
+MSE: 0.018229460493435753
+ESS: 63.80311172702513
+RMS: 0.1350165193353604
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1474.0
+Largest error: 66.0
+actual=182.3379101053204,ideal=110.00000000003598, error=66.0% lineNumber = 165
+Average error margin: 6.1161825726141075
+MSE: 0.02346691556615217
+ESS: 2.8277633257213366
+RMS: 0.1531891496358413
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 15, SecondLayer: false, SecondLayer#: 0
+Neural Network Results:
+Set size: 7000
+Total errors: 44729.0
+Largest error: 173.0
+actual=303.1388753125876,ideal=111.00000000001998, error=173.0% lineNumber = 4597
+Average error margin: 6.389857142857143
+MSE: 0.018692248122754412
+ESS: 65.42286842964045
+RMS: 0.13671959670345146
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1519.0
+Largest error: 75.0
+actual=192.38791788470294,ideal=110.00000000003598, error=75.0% lineNumber = 165
+Average error margin: 6.3029045643153525
+MSE: 0.023250532746446787
+ESS: 2.801689195946838
+RMS: 0.1524812537541805
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 10, SecondLayer: false, SecondLayer#: 0
+Neural Network Results:
+Set size: 7000
+Total errors: 45524.0
+Largest error: 171.0
+actual=300.75587741393525,ideal=111.00000000001998, error=171.0% lineNumber = 4597
+Average error margin: 6.503428571428572
+MSE: 0.019529610013057964
+ESS: 68.35363504570287
+RMS: 0.13974838107490892
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1510.0
+Largest error: 85.0
+actual=203.035366353298,ideal=110.00000000003598, error=85.0% lineNumber = 165
+Average error margin: 6.265560165975104
+MSE: 0.025535735742061087
+ESS: 3.0770561569183608
+RMS: 0.15979904800111008
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 10, SecondLayer: true, SecondLayer#: 10
+Neural Network Results:
+Set size: 7000
+Total errors: 44607.0
+Largest error: 161.0
+actual=237.66688790369503,ideal=90.999999999984, error=161.0% lineNumber = 4422
+Average error margin: 6.372428571428571
+MSE: 0.018364746286414598
+ESS: 64.27661200245109
+RMS: 0.1355165904471279
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1507.0
+Largest error: 75.0
+actual=192.22667624623688,ideal=110.00000000003598, error=75.0% lineNumber = 165
+Average error margin: 6.253112033195021
+MSE: 0.02250248090927095
+ESS: 2.7115489495671494
+RMS: 0.15000826946962273
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 15, SecondLayer: true, SecondLayer#: 10
+Neural Network Results:
+Set size: 7000
+Total errors: 42964.0
+Largest error: 171.0
+actual=300.88701389579876,ideal=111.00000000001998, error=171.0% lineNumber = 4597
+Average error margin: 6.137714285714286
+MSE: 0.017428024189263217
+ESS: 60.99808466242126
+RMS: 0.13201524226112382
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1519.0
+Largest error: 80.0
+actual=197.7583166707502,ideal=110.00000000003598, error=80.0% lineNumber = 165
+Average error margin: 6.3029045643153525
+MSE: 0.023747332306057498
+ESS: 2.8615535428799284
+RMS: 0.15410169468911591
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: true, SecondLayer#: 10
+Neural Network Results:
+Set size: 7000
+Total errors: 42317.0
+Largest error: 157.0
+actual=285.79535701075565,ideal=111.00000000001998, error=157.0% lineNumber = 4597
+Average error margin: 6.045285714285714
+MSE: 0.016615519621472077
+ESS: 58.15431867515227
+RMS: 0.12890120100864877
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1589.0
+Largest error: 85.0
+actual=203.7209711254969,ideal=110.00000000003598, error=85.0% lineNumber = 165
+Average error margin: 6.593360995850622
+MSE: 0.024116495443976177
+ESS: 2.9060377009991294
+RMS: 0.15529486612240656
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 30, SecondLayer: true, SecondLayer#: 10
+Neural Network Results:
+Set size: 7000
+Total errors: 40239.0
+Largest error: 138.0
+actual=216.28629680513075,ideal=90.999999999984, error=138.0% lineNumber = 4422
+Average error margin: 5.748428571428572
+MSE: 0.014227968273918661
+ESS: 49.79788895871531
+RMS: 0.11928104742128424
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1564.0
+Largest error: 61.0
+actual=177.1318114017652,ideal=110.00000000003598, error=61.0% lineNumber = 165
+Average error margin: 6.4896265560165975
+MSE: 0.024068150141284255
+ESS: 2.900212092024753
+RMS: 0.1551391315603006
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 10, SecondLayer: true, SecondLayer#: 5
+Neural Network Results:
+Set size: 7000
+Total errors: 44378.0
+Largest error: 170.0
+actual=299.5421255561065,ideal=111.00000000001998, error=170.0% lineNumber = 4597
+Average error margin: 6.339714285714286
+MSE: 0.019137474766507435
+ESS: 66.98116168277602
+RMS: 0.138338262120454
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1420.0
+Largest error: 78.0
+actual=196.28308731231186,ideal=110.00000000003598, error=78.0% lineNumber = 165
+Average error margin: 5.8921161825726145
+MSE: 0.023812984819611378
+ESS: 2.869464670763171
+RMS: 0.15431456450902933
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 15, SecondLayer: true, SecondLayer#: 5
+Neural Network Results:
+Set size: 7000
+Total errors: 42860.0
+Largest error: 161.0
+actual=250.65104444024175,ideal=96.000000000082, error=161.0% lineNumber = 4637
+Average error margin: 6.122857142857143
+MSE: 0.017471741925389053
+ESS: 61.15109673886168
+RMS: 0.1321807169196364
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1571.0
+Largest error: 78.0
+actual=195.98545960539104,ideal=110.00000000003598, error=78.0% lineNumber = 165
+Average error margin: 6.518672199170124
+MSE: 0.026035185237085857
+ESS: 3.137239821068846
+RMS: 0.1613542228672242
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: true, SecondLayer#: 5
+Neural Network Results:
+Set size: 7000
+Total errors: 42768.0
+Largest error: 154.0
+actual=244.11932816094796,ideal=96.000000000082, error=154.0% lineNumber = 4637
+Average error margin: 6.109714285714285
+MSE: 0.017030410000507444
+ESS: 59.60643500177605
+RMS: 0.1305006130273243
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1523.0
+Largest error: 76.0
+actual=193.14567017987758,ideal=110.00000000003598, error=76.0% lineNumber = 165
+Average error margin: 6.319502074688796
+MSE: 0.023093651606595815
+ESS: 2.7827850185947955
+RMS: 0.15196595541961302
+
+
+
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 30, SecondLayer: true, SecondLayer#: 5
+Neural Network Results:
+Set size: 7000
+Total errors: 41168.0
+Largest error: 150.0
+actual=227.10269330782987,ideal=90.999999999984, error=150.0% lineNumber = 4422
+Average error margin: 5.881142857142857
+MSE: 0.015486568887364981
+ESS: 54.202991105777436
+RMS: 0.12444504364322824
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 1538.0
+Largest error: 52.0
+actual=203.02942018187161,ideal=134.000000000008, error=52.0% lineNumber = 152
+Average error margin: 6.381742738589212
+MSE: 0.022636052148633665
+ESS: 2.7276442839103567
+RMS: 0.15045282366454166
+
+1 million gennemkørsler:
+#DataEntries: 7000, TestEntries: 240, Epochs: 1000000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 0
+Neural Network Results:
+Set size: 7000
+Total errors: 100636.0
+Largest error: 171.0
+actual=246.25550909740343,ideal=90.999999999984, error=171.0% lineNumber = 2693
+Average error margin: 14.37657142857143
+MSE: 0.06719486626579967
+ESS: 235.18203193029882
+RMS: 0.25921972584238195
+
+
+
+Neural Network Results:
+Test data:
+Set size: 241
+Total errors: 3498.0
+Largest error: 88.0
+actual=197.26940538476248,ideal=104.99999999993801, error=88.0% lineNumber = 157
+Average error margin: 14.514522821576763
+MSE: 0.058488093858919094
+ESS: 7.047815309999751
+RMS: 0.241843118279018
+
+
+###########################################################################################################################
+DataEntries: 7000, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 0
+Use prediction: true
+Use last known: true
+DataEntries: 6000, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6000
+Total errors: 38323.0
+Largest error: 151.0
+actual=278.99385231057494,ideal=111.00000000001998, error=151.0% lineNumber = 4597
+Average error margin: 6.387166666666666
+MSE: 0.017472033788996307
+ESS: 52.416101366988926
+RMS: 0.13218182094749756
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 558.0
+Largest error: 53.0
+actual=360.66977005510216,ideal=234.999999999994, error=53.0% lineNumber = 5
+Average error margin: 23.25
+MSE: 0.1605038846641306
+ESS: 1.926046615969567
+RMS: 0.4006293607115317
+ 
+DataEntries: 6100, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6100
+Total errors: 39378.0
+Largest error: 156.0
+actual=245.4848571751191,ideal=96.000000000082, error=156.0% lineNumber = 4637
+Average error margin: 6.455409836065574
+MSE: 0.017739253557234054
+ESS: 54.10472334956387
+RMS: 0.13318878915747395
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 310.0
+Largest error: 31.0
+actual=291.08741666657505,ideal=422.00000000002797, error=31.0% lineNumber = 2
+Average error margin: 12.916666666666666
+MSE: 0.12498910327690012
+ESS: 1.4998692393228015
+RMS: 0.35353797996382247
+ 
+DataEntries: 6200, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6200
+Total errors: 39664.0
+Largest error: 167.0
+actual=243.03753649253707,ideal=90.999999999984, error=167.0% lineNumber = 4422
+Average error margin: 6.39741935483871
+MSE: 0.017302342250609747
+ESS: 53.63726097689021
+RMS: 0.13153836797911758
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 412.0
+Largest error: 134.0
+actual=217.59808270488196,ideal=92.999999999952, error=134.0% lineNumber = 6
+Average error margin: 17.166666666666668
+MSE: 0.08336337176601794
+ESS: 1.0003604611922152
+RMS: 0.2887271579987202
+ 
+DataEntries: 6300, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6300
+Total errors: 39784.0
+Largest error: 160.0
+actual=250.03605400596322,ideal=96.000000000082, error=160.0% lineNumber = 4637
+Average error margin: 6.314920634920635
+MSE: 0.017428237540130596
+ESS: 54.898948251411376
+RMS: 0.1320160503125684
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 381.0
+Largest error: 42.0
+actual=351.3277780055321,ideal=246.99999999998, error=42.0% lineNumber = 24
+Average error margin: 15.875
+MSE: 0.08294290649492235
+ESS: 0.9953148779390681
+RMS: 0.2879981015474275
+ 
+DataEntries: 6400, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6400
+Total errors: 41102.0
+Largest error: 152.0
+actual=279.2963225472244,ideal=111.00000000001998, error=152.0% lineNumber = 4597
+Average error margin: 6.4221875
+MSE: 0.01791416611720864
+ESS: 57.32533157506765
+RMS: 0.1338438123979164
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 380.0
+Largest error: 31.0
+actual=386.4629647623647,ideal=293.99999999994, error=31.0% lineNumber = 13
+Average error margin: 15.833333333333334
+MSE: 0.10171356062707165
+ESS: 1.2205627275248598
+RMS: 0.3189256349481359
+ 
+DataEntries: 6500, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6500
+Total errors: 41146.0
+Largest error: 164.0
+actual=240.16209729202643,ideal=90.999999999984, error=164.0% lineNumber = 4422
+Average error margin: 6.330153846153846
+MSE: 0.017729625191971785
+ESS: 57.6212818739083
+RMS: 0.13315263869699234
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 548.0
+Largest error: 52.0
+actual=408.3228547513784,ideal=269.0, error=52.0% lineNumber = 4
+Average error margin: 22.833333333333332
+MSE: 0.1838136835880367
+ESS: 2.2057642030564404
+RMS: 0.4287349805976143
+ 
+DataEntries: 6600, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6600
+Total errors: 41884.0
+Largest error: 190.0
+actual=321.959514673416,ideal=111.00000000001998, error=190.0% lineNumber = 4597
+Average error margin: 6.346060606060606
+MSE: 0.018342477021228695
+ESS: 60.53017417005469
+RMS: 0.13543440117351535
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 417.0
+Largest error: 88.0
+actual=180.1155711984665,ideal=96.000000000082, error=88.0% lineNumber = 12
+Average error margin: 17.375
+MSE: 0.04398471612103089
+ESS: 0.5278165934523706
+RMS: 0.2097253349527207
+ 
+DataEntries: 6700, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6700
+Total errors: 42701.0
+Largest error: 172.0
+actual=301.48614444845344,ideal=111.00000000001998, error=172.0% lineNumber = 4597
+Average error margin: 6.373283582089552
+MSE: 0.018250698900948856
+ESS: 61.13984131817867
+RMS: 0.13509514758476285
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 254.0
+Largest error: 29.0
+actual=372.50338655031544,ideal=289.00000000002, error=29.0% lineNumber = 12
+Average error margin: 10.583333333333334
+MSE: 0.046236834640889096
+ESS: 0.5548420156906692
+RMS: 0.2150275206593079
+ 
+DataEntries: 6800, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6800
+Total errors: 43084.0
+Largest error: 159.0
+actual=235.71615552702724,ideal=90.999999999984, error=159.0% lineNumber = 4422
+Average error margin: 6.3358823529411765
+MSE: 0.017881586504348058
+ESS: 60.7973941147834
+RMS: 0.13372204943220117
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 390.0
+Largest error: 35.0
+actual=341.2591860133358,ideal=252.0000000000068, error=35.0% lineNumber = 14
+Average error margin: 16.25
+MSE: 0.06992573656043481
+ESS: 0.8391088387252177
+RMS: 0.2644347491545595
+ 
+DataEntries: 6900, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 6900
+Total errors: 43528.0
+Largest error: 188.0
+actual=320.22789762837334,ideal=111.00000000001998, error=188.0% lineNumber = 4597
+Average error margin: 6.308405797101449
+MSE: 0.017668482046317165
+ESS: 60.95626305979422
+RMS: 0.13292284245500155
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 187.0
+Largest error: 21.0
+actual=312.76015987817595,ideal=257.9999999999998, error=21.0% lineNumber = 11
+Average error margin: 7.791666666666667
+MSE: 0.02201573094921208
+ESS: 0.264188771390545
+RMS: 0.14837698928476775
+ 
+DataEntries: 7000, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 7000
+Total errors: 44315.0
+Largest error: 151.0
+actual=278.36705759632105,ideal=111.00000000001998, error=151.0% lineNumber = 4597
+Average error margin: 6.3307142857142855
+MSE: 0.018028225049421868
+ESS: 63.098787672976535
+RMS: 0.13426922599546728
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 210.0
+Largest error: 23.0
+actual=328.9145070893085,ideal=268.0, error=23.0% lineNumber = 15
+Average error margin: 8.75
+MSE: 0.027670547709563533
+ESS: 0.3320465725147624
+RMS: 0.1663446654075914
+ 
+DataEntries: 7100, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 7100
+Total errors: 44634.0
+Largest error: 158.0
+actual=247.94886557190512,ideal=96.000000000082, error=158.0% lineNumber = 4637
+Average error margin: 6.286478873239437
+MSE: 0.01829160529597315
+ESS: 64.93519880070468
+RMS: 0.1352464613066573
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 212.0
+Largest error: 29.0
+actual=316.72243719324683,ideal=245.000000000012, error=29.0% lineNumber = 19
+Average error margin: 8.833333333333334
+MSE: 0.02845154933254955
+ESS: 0.3414185919905946
+RMS: 0.1686758706292917
+ 
+DataEntries: 7200, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 7200
+Total errors: 45609.0
+Largest error: 158.0
+actual=286.2538518986904,ideal=111.00000000001998, error=158.0% lineNumber = 4597
+Average error margin: 6.334583333333334
+MSE: 0.018079959747069947
+ESS: 65.0878550894518
+RMS: 0.13446174083013335
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 250.0
+Largest error: 27.0
+actual=346.984310152693,ideal=273.999999999993, error=27.0% lineNumber = 22
+Average error margin: 10.416666666666666
+MSE: 0.05788495869668494
+ESS: 0.6946195043602192
+RMS: 0.24059293151854014
+ 
+DataEntries: 7300, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 7300
+Total errors: 46018.0
+Largest error: 174.0
+actual=248.9860079032997,ideal=90.999999999984, error=174.0% lineNumber = 4422
+Average error margin: 6.303835616438356
+MSE: 0.01817497250662571
+ESS: 66.33864964918385
+RMS: 0.134814585659808
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 263.0
+Largest error: 36.0
+actual=366.22158362362137,ideal=269.0, error=36.0% lineNumber = 6
+Average error margin: 10.958333333333334
+MSE: 0.057752217130577384
+ESS: 0.6930266055669286
+RMS: 0.2403169097890895
+ 
+DataEntries: 7400, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 7400
+Total errors: 46266.0
+Largest error: 180.0
+actual=310.81613893622773,ideal=111.00000000001998, error=180.0% lineNumber = 4597
+Average error margin: 6.252162162162162
+MSE: 0.01810155155574139
+ESS: 66.97574075624314
+RMS: 0.13454200665866922
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 182.0
+Largest error: 38.0
+actual=410.73755731291567,ideal=297.00000000007, error=38.0% lineNumber = 9
+Average error margin: 7.583333333333333
+MSE: 0.04564493390075238
+ESS: 0.5477392068090285
+RMS: 0.21364675026958024
+ 
+DataEntries: 7500, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+Neural Network Results:
+Set size: 7500
+Total errors: 47063.0
+Largest error: 157.0
+actual=269.5631548840778,ideal=104.99999999993801, error=157.0% lineNumber = 4518
+Average error margin: 6.275066666666667
+MSE: 0.018359981064643094
+ESS: 68.8499289924116
+RMS: 0.13549900761497516
+ 
+Neural Network Results:
+Test data:
+Set size: 24
+Total errors: 284.0
+Largest error: 37.0
+actual=387.1172242425799,ideal=282.9999999999914, error=37.0% lineNumber = 23
+Average error margin: 11.833333333333334
+MSE: 0.0674329404061099
+ESS: 0.8091952848733189
+RMS: 0.25967853281723136
+ 
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 0
+Neural Network Results:
+Set size: 7000
+Total errors: 44462.0
+Largest error: 160.0
+actual=288.21303458698986,ideal=111.00000000001998, error=160.0% lineNumber = 4597
+Average error margin: 6.351714285714285
+MSE: 0.01823905736678622
+ESS: 63.836700783751766
+RMS: 0.13505205428569467
+ 
+Neural Network Results:
+Test data:
+Set size: 240
+Total errors: 2923.0
+Largest error: 107.0
+actual=221.14691859460623,ideal=107.00000000008399, error=107.0% lineNumber = 150
+Average error margin: 12.179166666666667
+MSE: 0.048094433076552826
+ESS: 5.771331969186339
+RMS: 0.21930443013435189
+ 
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 15, SecondLayer: false, SecondLayer#: 0
+Neural Network Results:
+Set size: 7000
+Total errors: 44791.0
+Largest error: 184.0
+actual=315.4603870723682,ideal=111.00000000001998, error=184.0% lineNumber = 4597
+Average error margin: 6.398714285714286
+MSE: 0.018653865368992734
+ESS: 65.28852879147458
+RMS: 0.1365791542256458
+ 
+Neural Network Results:
+Test data:
+Set size: 240
+Total errors: 2955.0
+Largest error: 109.0
+actual=223.96511095611802,ideal=107.00000000008399, error=109.0% lineNumber = 150
+Average error margin: 12.3125
+MSE: 0.05171768625534374
+ESS: 6.206122350641248
+RMS: 0.22741522872346023
+ 
+DataEntries: 7000, TestEntries: 240, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 10, SecondLayer: false, SecondLayer#: 0
+Neural Network Results:
+Set size: 7000
+Total errors: 45423.0
+Largest error: 186.0
+actual=317.66846395813184,ideal=111.00000000001998, error=186.0% lineNumber = 4597
+Average error margin: 6.489
+MSE: 0.01953460294916185
+ESS: 68.37111032206649
+RMS: 0.13976624395454665
+ 
+Neural Network Results:
+Test data:
+Set size: 240
+Total errors: 3035.0
+Largest error: 98.0
+actual=212.37493020373356,ideal=107.00000000008399, error=98.0% lineNumber = 150
+Average error margin: 12.645833333333334
+MSE: 0.052907492089292456
+ESS: 6.348899050715095
+RMS: 0.23001628657399992
+
+############
+DataEntries: 7000, TestEntries: 24, Epochs: 10000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 0
+Use prediction: true
+DataEntries: 9900, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.95961816577096,ideal=147.00000000004601, error=112.0% lineNumber = 3748
+Average error margin: 4.504177215189873
+MSE: 0.01224110193771718
+ESS: 48.35235265398286
+RMS: 0.11063951345571428
+ 
+Neural Network Results:
+Set size: 24
+actual=289.21509804330503,ideal=214.999999999978, error=35.0% lineNumber = 16
+Average error margin: 20.208333333333332
+MSE: 0.06798731669722095
+ESS: 0.8158478003666515
+RMS: 0.2607437759510684
+ 
+DataEntries: 9924, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=312.614655001988,ideal=147.00000000004601, error=113.0% lineNumber = 3724
+Average error margin: 4.501518987341772
+MSE: 0.012565683638640582
+ESS: 49.6344503726303
+RMS: 0.11209676016121332
+ 
+Neural Network Results:
+Set size: 24
+actual=293.9031410065627,ideal=479.99999999993304, error=39.0% lineNumber = 13
+Average error margin: 16.833333333333332
+MSE: 0.15371202914589813
+ESS: 1.8445443497507776
+RMS: 0.39206125687945514
+ 
+DataEntries: 9948, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=310.85320975957217,ideal=147.00000000004601, error=111.0% lineNumber = 3700
+Average error margin: 4.420506329113924
+MSE: 0.011701101103506688
+ESS: 46.21934935885142
+RMS: 0.10817162799693221
+ 
+Neural Network Results:
+Set size: 24
+actual=376.94148374551224,ideal=231.999999999961, error=62.0% lineNumber = 17
+Average error margin: 36.708333333333336
+MSE: 0.2813633756969005
+ESS: 3.376360508362806
+RMS: 0.5304369667518475
+ 
+DataEntries: 9972, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.64850848459554,ideal=147.00000000004601, error=112.0% lineNumber = 3676
+Average error margin: 4.466962025316455
+MSE: 0.012003550124547284
+ESS: 47.41402299196177
+RMS: 0.1095607143302164
+ 
+Neural Network Results:
+Set size: 24
+actual=310.174937454857,ideal=239.99999999994202, error=29.0% lineNumber = 24
+Average error margin: 10.541666666666666
+MSE: 0.028412669375482147
+ESS: 0.34095203250578576
+RMS: 0.16856058072836053
+ 
+DataEntries: 9996, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=312.54456027795356,ideal=147.00000000004601, error=113.0% lineNumber = 3652
+Average error margin: 4.507974683544304
+MSE: 0.012118559761072626
+ESS: 47.86831105623687
+RMS: 0.1100843302249354
+ 
+Neural Network Results:
+Set size: 24
+actual=305.266002681359,ideal=215.999999999999, error=41.0% lineNumber = 23
+Average error margin: 17.25
+MSE: 0.0563015744802949
+ESS: 0.6756188937635388
+RMS: 0.23727952815254608
+ 
+DataEntries: 10020, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=315.14296598498015,ideal=147.00000000004601, error=114.0% lineNumber = 3628
+Average error margin: 4.4331645569620255
+MSE: 0.011999478050563828
+ESS: 47.39793829972712
+RMS: 0.10954212911279308
+ 
+Neural Network Results:
+Set size: 24
+actual=294.1264331819215,ideal=214.999999999978, error=37.0% lineNumber = 23
+Average error margin: 22.375
+MSE: 0.07489604054817912
+ESS: 0.8987524865781494
+RMS: 0.27367140981143634
+ 
+DataEntries: 10044, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=309.9532709384665,ideal=147.00000000004601, error=111.0% lineNumber = 3604
+Average error margin: 4.410379746835443
+MSE: 0.011961526283198303
+ESS: 47.2480288186333
+RMS: 0.10936876283106756
+ 
+Neural Network Results:
+Set size: 24
+actual=252.65830593952046,ideal=184.000000000075, error=37.0% lineNumber = 20
+Average error margin: 20.75
+MSE: 0.06703813877300617
+ESS: 0.8044576652760741
+RMS: 0.25891724309710656
+ 
+DataEntries: 10068, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=310.5747155734693,ideal=147.00000000004601, error=111.0% lineNumber = 3580
+Average error margin: 4.466075949367089
+MSE: 0.012430866504589553
+ESS: 49.101922693128735
+RMS: 0.11149379581209688
+ 
+Neural Network Results:
+Set size: 24
+actual=186.90266224227696,ideal=129.000000000042, error=45.0% lineNumber = 23
+Average error margin: 15.083333333333334
+MSE: 0.03216758019177725
+ESS: 0.386010962301327
+RMS: 0.17935322743618876
+ 
+DataEntries: 10092, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=305.8444497975376,ideal=147.00000000004601, error=108.0% lineNumber = 3556
+Average error margin: 4.419113924050633
+MSE: 0.01178030265965709
+ESS: 46.53219550564551
+RMS: 0.10853710268685585
+ 
+Neural Network Results:
+Set size: 24
+actual=282.02094773629926,ideal=227.000000000043, error=24.0% lineNumber = 12
+Average error margin: 10.041666666666666
+MSE: 0.021622849573050457
+ESS: 0.2594741948766055
+RMS: 0.14704709984576525
+ 
+DataEntries: 10116, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=305.71657471259465,ideal=147.00000000004601, error=108.0% lineNumber = 3532
+Average error margin: 4.452658227848101
+MSE: 0.012151808321116184
+ESS: 47.99964286840893
+RMS: 0.11023524083121597
+ 
+Neural Network Results:
+Set size: 24
+actual=299.71741416339455,ideal=459.000000000053, error=35.0% lineNumber = 7
+Average error margin: 10.625
+MSE: 0.08965444636387356
+ESS: 1.0758533563664827
+RMS: 0.29942352339766753
+ 
+DataEntries: 10140, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=307.3182503640173,ideal=147.00000000004601, error=109.0% lineNumber = 3508
+Average error margin: 4.435443037974683
+MSE: 0.012051652547734923
+ESS: 47.60402756355295
+RMS: 0.10978001889112118
+ 
+Neural Network Results:
+Set size: 24
+actual=210.31730208655205,ideal=309.0000000000072, error=32.0% lineNumber = 24
+Average error margin: 13.625
+MSE: 0.10970220507814159
+ESS: 1.316426460937699
+RMS: 0.33121323203963576
+ 
+DataEntries: 10164, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=308.50534864168486,ideal=147.00000000004601, error=110.0% lineNumber = 3484
+Average error margin: 4.503544303797469
+MSE: 0.012262542522315439
+ESS: 48.437042963145984
+RMS: 0.11073636494989096
+ 
+Neural Network Results:
+Set size: 24
+actual=339.2751967234155,ideal=239.99999999994202, error=41.0% lineNumber = 9
+Average error margin: 17.75
+MSE: 0.09162575081092268
+ESS: 1.0995090097310722
+RMS: 0.30269745755609295
+ 
+DataEntries: 10188, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=304.2981506513533,ideal=147.00000000004601, error=107.0% lineNumber = 3460
+Average error margin: 4.48
+MSE: 0.012308073622875303
+ESS: 48.61689081035745
+RMS: 0.11094175779604046
+ 
+Neural Network Results:
+Set size: 24
+actual=284.4283057634089,ideal=338.999999999964, error=16.0% lineNumber = 15
+Average error margin: 8.125
+MSE: 0.020566823485575102
+ESS: 0.24680188182690121
+RMS: 0.14341137850803576
+ 
+DataEntries: 10212, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=309.4523226498702,ideal=147.00000000004601, error=111.0% lineNumber = 3436
+Average error margin: 4.589240506329114
+MSE: 0.012714319587577317
+ESS: 50.2215623709304
+RMS: 0.11275779169342275
+ 
+Neural Network Results:
+Set size: 24
+actual=288.63021446011294,ideal=219.00000000006202, error=32.0% lineNumber = 11
+Average error margin: 13.541666666666666
+MSE: 0.03909753844227401
+ESS: 0.4691704613072881
+RMS: 0.19773097491863537
+ 
+DataEntries: 10236, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.7972661286034,ideal=147.00000000004601, error=112.0% lineNumber = 3412
+Average error margin: 4.4840506329113925
+MSE: 0.012435290024304735
+ESS: 49.119395596003706
+RMS: 0.11151363156271404
+ 
+Neural Network Results:
+Set size: 24
+actual=251.83901808227796,ideal=434.000000000089, error=42.0% lineNumber = 2
+Average error margin: 12.708333333333334
+MSE: 0.09950387803019585
+ESS: 1.1940465363623503
+RMS: 0.3154423529429678
+ 
+DataEntries: 10260, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=317.24209036995774,ideal=147.00000000004601, error=116.0% lineNumber = 3388
+Average error margin: 4.551012658227848
+MSE: 0.012228201423324066
+ESS: 48.30139562213006
+RMS: 0.11058119832649702
+ 
+Neural Network Results:
+Set size: 24
+actual=297.58936074964066,ideal=460.000000000074, error=35.0% lineNumber = 2
+Average error margin: 9.791666666666666
+MSE: 0.07927346933002015
+ESS: 0.9512816319602417
+RMS: 0.28155544628016016
+ 
+DataEntries: 10284, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=313.5311103290627,ideal=147.00000000004601, error=113.0% lineNumber = 3364
+Average error margin: 4.5220253164556965
+MSE: 0.012544309248951106
+ESS: 49.55002153335687
+RMS: 0.11200138056716581
+ 
+Neural Network Results:
+Set size: 24
+actual=415.68960368002695,ideal=324.0000000000043, error=28.0% lineNumber = 6
+Average error margin: 14.666666666666666
+MSE: 0.07145151298903023
+ESS: 0.8574181558683628
+RMS: 0.2673041581962956
+ 
+DataEntries: 10308, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=312.92034409815415,ideal=147.00000000004601, error=113.0% lineNumber = 3340
+Average error margin: 4.559493670886076
+MSE: 0.012447061321021885
+ESS: 49.16589221803645
+RMS: 0.11156639870956615
+ 
+Neural Network Results:
+Set size: 24
+actual=310.89546311278934,ideal=264.000000000072, error=18.0% lineNumber = 10
+Average error margin: 8.333333333333334
+MSE: 0.021173859489732622
+ESS: 0.2540863138767915
+RMS: 0.14551240321612663
+ 
+DataEntries: 10332, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.3969896117314,ideal=147.00000000004601, error=112.0% lineNumber = 3316
+Average error margin: 4.560632911392405
+MSE: 0.012842652784813852
+ESS: 50.72847850001472
+RMS: 0.11332542867694723
+ 
+Neural Network Results:
+Set size: 24
+actual=298.96431408023216,ideal=235.000000000024, error=27.0% lineNumber = 13
+Average error margin: 13.75
+MSE: 0.05543021520401384
+ESS: 0.6651625824481661
+RMS: 0.23543622321982197
+ 
+DataEntries: 10356, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.07492772368096,ideal=147.00000000004601, error=112.0% lineNumber = 3292
+Average error margin: 4.5559493670886075
+MSE: 0.012618264776792343
+ESS: 49.84214586832975
+RMS: 0.11233104992295026
+ 
+Neural Network Results:
+Set size: 24
+actual=336.3873771755678,ideal=263.000000000051, error=28.0% lineNumber = 8
+Average error margin: 11.166666666666666
+MSE: 0.03666172335429785
+ESS: 0.4399406802515742
+RMS: 0.19147251331274118
+ 
+DataEntries: 10380, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=308.68116960529284,ideal=147.00000000004601, error=110.0% lineNumber = 3268
+Average error margin: 4.559493670886076
+MSE: 0.012669752405501463
+ESS: 50.04552200173078
+RMS: 0.11255999469394738
+ 
+Neural Network Results:
+Set size: 24
+actual=271.8739853570524,ideal=498.999999999958, error=46.0% lineNumber = 22
+Average error margin: 18.208333333333332
+MSE: 0.2509149436109569
+ESS: 3.0109793233314828
+RMS: 0.5009141080174893
+ 
+DataEntries: 10404, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.19639941447366,ideal=147.00000000004601, error=114.0% lineNumber = 3244
+Average error margin: 4.585063291139241
+MSE: 0.012885441766311357
+ESS: 50.89749497692986
+RMS: 0.11351405977371859
+ 
+Neural Network Results:
+Set size: 24
+actual=335.2692926923487,ideal=232.99999999998198, error=44.0% lineNumber = 13
+Average error margin: 17.791666666666668
+MSE: 0.16849741811851301
+ESS: 2.021969017422156
+RMS: 0.41048437012694283
+ 
+DataEntries: 10428, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.33578382663336,ideal=147.00000000004601, error=112.0% lineNumber = 3220
+Average error margin: 4.610759493670886
+MSE: 0.012716212770485685
+ESS: 50.229040443418455
+RMS: 0.1127661862904199
+ 
+Neural Network Results:
+Set size: 24
+actual=303.61253995244624,ideal=252.000000000007, error=20.0% lineNumber = 6
+Average error margin: 6.666666666666667
+MSE: 0.015938771475045015
+ESS: 0.19126525770054018
+RMS: 0.1262488474206597
+ 
+DataEntries: 10452, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=315.7135284869612,ideal=147.00000000004601, error=115.0% lineNumber = 3196
+Average error margin: 4.797088607594937
+MSE: 0.013632979760712705
+ESS: 53.850270054815184
+RMS: 0.11676035183534136
+ 
+Neural Network Results:
+Set size: 24
+actual=278.1455760774146,ideal=185.99999999993, error=50.0% lineNumber = 18
+Average error margin: 18.916666666666668
+MSE: 0.08562193826175835
+ESS: 1.0274632591411001
+RMS: 0.2926122660821968
+ 
+DataEntries: 10476, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=312.92673135029656,ideal=147.00000000004601, error=113.0% lineNumber = 3172
+Average error margin: 4.680506329113924
+MSE: 0.012873337945331338
+ESS: 50.84968488405878
+RMS: 0.1134607330547945
+ 
+Neural Network Results:
+Set size: 24
+actual=290.0429204994398,ideal=235.000000000024, error=23.0% lineNumber = 12
+Average error margin: 9.958333333333334
+MSE: 0.02207030332967531
+ESS: 0.2648436399561037
+RMS: 0.14856077318617897
+ 
+DataEntries: 10500, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=306.887436918358,ideal=147.00000000004601, error=109.0% lineNumber = 3148
+Average error margin: 4.673544303797469
+MSE: 0.012827609203998325
+ESS: 50.66905635579339
+RMS: 0.11325903586027176
+ 
+Neural Network Results:
+Set size: 24
+actual=197.47791516393897,ideal=286.999999999994, error=31.0% lineNumber = 21
+Average error margin: 11.916666666666666
+MSE: 0.03941930804796585
+ESS: 0.4730316965755902
+RMS: 0.1985429627258691
+ 
+DataEntries: 10524, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.16117876925375,ideal=147.00000000004601, error=114.0% lineNumber = 3124
+Average error margin: 4.652025316455696
+MSE: 0.012998207206576032
+ESS: 51.34291846597532
+RMS: 0.11400968031959405
+ 
+Neural Network Results:
+Set size: 24
+actual=292.18568089281104,ideal=143.999999999983, error=103.0% lineNumber = 21
+Average error margin: 40.583333333333336
+MSE: 0.19430614685326375
+ESS: 2.331673762239165
+RMS: 0.4408017092222576
+ 
+DataEntries: 10548, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.91907103138243,ideal=147.00000000004601, error=116.0% lineNumber = 3100
+Average error margin: 4.6367088607594935
+MSE: 0.01282060530279371
+ESS: 50.64139094603516
+RMS: 0.11322811180441768
+ 
+Neural Network Results:
+Set size: 24
+actual=197.28278205731306,ideal=151.999999999964, error=30.0% lineNumber = 4
+Average error margin: 12.75
+MSE: 0.028033686498624023
+ESS: 0.3364042379834883
+RMS: 0.16743263271723355
+ 
+DataEntries: 10572, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=313.4506362573681,ideal=147.00000000004601, error=113.0% lineNumber = 3076
+Average error margin: 4.663924050632912
+MSE: 0.01272760937637961
+ESS: 50.27405703669946
+RMS: 0.1128167069913832
+ 
+Neural Network Results:
+Set size: 24
+actual=208.38057696476983,ideal=127.0, error=64.0% lineNumber = 15
+Average error margin: 11.708333333333334
+MSE: 0.02445611515393861
+ESS: 0.2934733818472633
+RMS: 0.15638451059468328
+ 
+DataEntries: 10596, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=309.56023047016504,ideal=147.00000000004601, error=111.0% lineNumber = 3052
+Average error margin: 4.759746835443038
+MSE: 0.013338330592019904
+ESS: 52.68640583847862
+RMS: 0.1154916905756423
+ 
+Neural Network Results:
+Set size: 24
+actual=266.71142277344893,ideal=430.000000000005, error=38.0% lineNumber = 20
+Average error margin: 12.125
+MSE: 0.06570870869375103
+ESS: 0.7885045043250124
+RMS: 0.25633709972173563
+ 
+DataEntries: 10620, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=318.78113341563756,ideal=147.00000000004601, error=117.0% lineNumber = 3028
+Average error margin: 4.75
+MSE: 0.013088933752588985
+ESS: 51.70128832272649
+RMS: 0.1144068780825217
+ 
+Neural Network Results:
+Set size: 24
+actual=298.2428287950479,ideal=469.99999999990996, error=37.0% lineNumber = 17
+Average error margin: 10.958333333333334
+MSE: 0.10415420413170623
+ESS: 1.2498504495804748
+RMS: 0.32272930473030526
+ 
+DataEntries: 10644, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=308.41161014426126,ideal=147.00000000004601, error=110.0% lineNumber = 3004
+Average error margin: 4.813037974683544
+MSE: 0.013531644270831686
+ESS: 53.44999486978516
+RMS: 0.11632559594015277
+ 
+Neural Network Results:
+Set size: 24
+actual=301.47638083939347,ideal=407.999999999917, error=26.0% lineNumber = 4
+Average error margin: 9.541666666666666
+MSE: 0.04427183492974296
+ESS: 0.5312620191569155
+RMS: 0.21040873301681887
+ 
+DataEntries: 10668, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=310.24665467864963,ideal=147.00000000004601, error=111.0% lineNumber = 2980
+Average error margin: 4.816962025316456
+MSE: 0.013798767789909785
+ESS: 54.50513277014365
+RMS: 0.11746815649319514
+ 
+Neural Network Results:
+Set size: 24
+actual=171.31189989962448,ideal=208.000000000018, error=18.0% lineNumber = 10
+Average error margin: 12.875
+MSE: 0.02582061468068439
+ESS: 0.3098473761682127
+RMS: 0.16068794192684274
+ 
+DataEntries: 10692, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=319.5703715491732,ideal=147.00000000004601, error=117.0% lineNumber = 2956
+Average error margin: 4.781645569620253
+MSE: 0.013526742060700297
+ESS: 53.43063113976617
+RMS: 0.1163045229589129
+ 
+Neural Network Results:
+Set size: 24
+actual=180.79355136725331,ideal=226.000000000022, error=20.0% lineNumber = 9
+Average error margin: 8.5
+MSE: 0.015099416374626385
+ESS: 0.18119299649551662
+RMS: 0.12287968251353185
+ 
+DataEntries: 10716, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.0407575617926,ideal=147.00000000004601, error=112.0% lineNumber = 2932
+Average error margin: 4.784683544303798
+MSE: 0.01335046775129894
+ESS: 52.73434761763081
+RMS: 0.11554422422301748
+ 
+Neural Network Results:
+Set size: 24
+actual=291.05900199277437,ideal=426.999999999942, error=32.0% lineNumber = 15
+Average error margin: 16.583333333333332
+MSE: 0.14137393376639718
+ESS: 1.696487205196766
+RMS: 0.375997252338893
+ 
+DataEntries: 10740, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=315.9319081026972,ideal=147.00000000004601, error=115.0% lineNumber = 2908
+Average error margin: 4.801645569620253
+MSE: 0.013484981692252032
+ESS: 53.26567768439553
+RMS: 0.11612485389550349
+ 
+Neural Network Results:
+Set size: 24
+actual=333.4683390469679,ideal=273.999999999908, error=22.0% lineNumber = 21
+Average error margin: 9.333333333333334
+MSE: 0.03140416825867954
+ESS: 0.37685001910415444
+RMS: 0.17721221249868627
+ 
+DataEntries: 10764, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.2044324899866,ideal=147.00000000004601, error=115.0% lineNumber = 2884
+Average error margin: 4.7893670886075945
+MSE: 0.013317668586979503
+ESS: 52.60479091856904
+RMS: 0.1154022035620616
+ 
+Neural Network Results:
+Set size: 24
+actual=286.93418828801396,ideal=407.999999999917, error=30.0% lineNumber = 15
+Average error margin: 14.875
+MSE: 0.1414080902573505
+ESS: 1.6968970830882057
+RMS: 0.37604267079328973
+ 
+DataEntries: 10788, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=315.4652257597643,ideal=147.00000000004601, error=115.0% lineNumber = 2860
+Average error margin: 4.798101265822785
+MSE: 0.013622056449408818
+ESS: 53.80712297516483
+RMS: 0.11671356583280633
+ 
+Neural Network Results:
+Set size: 24
+actual=335.60561867570595,ideal=248.999999999944, error=35.0% lineNumber = 23
+Average error margin: 9.208333333333334
+MSE: 0.04117841160729635
+ESS: 0.4941409392875562
+RMS: 0.20292464514517786
+ 
+DataEntries: 10812, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.3697615887297,ideal=147.00000000004601, error=115.0% lineNumber = 2836
+Average error margin: 4.836835443037975
+MSE: 0.01359605375528494
+ESS: 53.704412333375515
+RMS: 0.1166021172847429
+ 
+Neural Network Results:
+Set size: 24
+actual=249.62927840203827,ideal=301.0000000000075, error=17.0% lineNumber = 15
+Average error margin: 9.208333333333334
+MSE: 0.019715454759833138
+ESS: 0.23658545711799764
+RMS: 0.14041173298493662
+ 
+DataEntries: 10836, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.527685551786,ideal=147.00000000004601, error=115.0% lineNumber = 2812
+Average error margin: 4.852278481012658
+MSE: 0.013630513424601668
+ESS: 53.84052802717659
+RMS: 0.11674978982679869
+ 
+Neural Network Results:
+Set size: 24
+actual=206.58775395923047,ideal=150.99999999994301, error=37.0% lineNumber = 13
+Average error margin: 12.708333333333334
+MSE: 0.022877540054524883
+ESS: 0.2745304806542986
+RMS: 0.15125323155068418
+ 
+DataEntries: 10860, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.50929389320595,ideal=147.00000000004601, error=114.0% lineNumber = 2788
+Average error margin: 4.8629113924050635
+MSE: 0.01382932973005695
+ESS: 54.62585243372495
+RMS: 0.11759817060676135
+ 
+Neural Network Results:
+Set size: 24
+actual=184.46061775292037,ideal=220.999999999917, error=17.0% lineNumber = 8
+Average error margin: 7.083333333333333
+MSE: 0.008572857181217952
+ESS: 0.10287428617461543
+RMS: 0.09258972503046951
+ 
+DataEntries: 10884, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.6712033353502,ideal=147.00000000004601, error=115.0% lineNumber = 2764
+Average error margin: 4.875696202531645
+MSE: 0.013826908603536137
+ESS: 54.61628898396774
+RMS: 0.11758787609076089
+ 
+Neural Network Results:
+Set size: 24
+actual=214.72751808951054,ideal=291.999999999912, error=26.0% lineNumber = 6
+Average error margin: 15.333333333333334
+MSE: 0.05977574439123545
+ESS: 0.7173089326948254
+RMS: 0.24449078590252732
+ 
+DataEntries: 10908, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=322.4244627201736,ideal=147.00000000004601, error=119.0% lineNumber = 2740
+Average error margin: 4.884556962025316
+MSE: 0.013888951653455156
+ESS: 54.86135903114787
+RMS: 0.11785139648495964
+ 
+Neural Network Results:
+Set size: 24
+actual=272.7831835842197,ideal=475.000000000015, error=43.0% lineNumber = 15
+Average error margin: 27.041666666666668
+MSE: 0.3966335246617516
+ESS: 4.759602295941019
+RMS: 0.62978847612651
+ 
+DataEntries: 10932, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=319.6591004444399,ideal=147.00000000004601, error=117.0% lineNumber = 2716
+Average error margin: 4.931772151898734
+MSE: 0.013949072630469213
+ESS: 55.09883689035339
+RMS: 0.11810619217665606
+ 
+Neural Network Results:
+Set size: 24
+actual=348.6090292392067,ideal=247.999999999923, error=41.0% lineNumber = 23
+Average error margin: 17.833333333333332
+MSE: 0.09521429738758429
+ESS: 1.1425715686510114
+RMS: 0.3085681405906713
+ 
+DataEntries: 10956, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=323.79198663099294,ideal=147.00000000004601, error=120.0% lineNumber = 2692
+Average error margin: 4.947215189873417
+MSE: 0.014152919752681011
+ESS: 55.904033023089994
+RMS: 0.1189660445365862
+ 
+Neural Network Results:
+Set size: 24
+actual=210.55509115330062,ideal=167.000000000092, error=26.0% lineNumber = 22
+Average error margin: 13.166666666666666
+MSE: 0.02418023919409694
+ESS: 0.29016287032916327
+RMS: 0.1554999652543271
+ 
+DataEntries: 10980, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=318.61455886937244,ideal=147.00000000004601, error=117.0% lineNumber = 2668
+Average error margin: 4.858227848101266
+MSE: 0.013563379487510298
+ESS: 53.575348975665676
+RMS: 0.11646192290834931
+ 
+Neural Network Results:
+Set size: 24
+actual=230.82426962522146,ideal=309.0000000000072, error=25.0% lineNumber = 15
+Average error margin: 10.958333333333334
+MSE: 0.04036909920543958
+ESS: 0.48442919046527494
+RMS: 0.20092062911866362
+ 
+DataEntries: 11004, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=315.6559590674911,ideal=147.00000000004601, error=115.0% lineNumber = 2644
+Average error margin: 4.956835443037975
+MSE: 0.013825580331754858
+ESS: 54.61104231043169
+RMS: 0.11758222795879851
+ 
+Neural Network Results:
+Set size: 24
+actual=186.76373855006705,ideal=284.999999999952, error=34.0% lineNumber = 22
+Average error margin: 15.625
+MSE: 0.08194644309885889
+ESS: 0.9833573171863066
+RMS: 0.28626289158544266
+ 
+DataEntries: 11028, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=309.8249011760076,ideal=147.00000000004601, error=111.0% lineNumber = 2620
+Average error margin: 4.890126582278481
+MSE: 0.01348121890900805
+ESS: 53.2508146905818
+RMS: 0.1161086513099177
+ 
+Neural Network Results:
+Set size: 24
+actual=198.71451543494965,ideal=136.00000000000202, error=46.0% lineNumber = 13
+Average error margin: 24.166666666666668
+MSE: 0.08586277801695102
+ESS: 1.0303533362034123
+RMS: 0.2930235110310281
+ 
+DataEntries: 11052, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=310.1795100584622,ideal=147.00000000004601, error=111.0% lineNumber = 2596
+Average error margin: 4.880506329113924
+MSE: 0.013421229267813577
+ESS: 53.013855607863626
+RMS: 0.11585002920937731
+ 
+Neural Network Results:
+Set size: 24
+actual=234.88419577747504,ideal=409.999999999959, error=43.0% lineNumber = 13
+Average error margin: 23.041666666666668
+MSE: 0.22279743084443202
+ESS: 2.673569170133184
+RMS: 0.47201422737501464
+ 
+DataEntries: 11076, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.63515625891654,ideal=147.00000000004601, error=112.0% lineNumber = 2572
+Average error margin: 5.015696202531646
+MSE: 0.014279824639699176
+ESS: 56.405307326811744
+RMS: 0.11949822023653396
+ 
+Neural Network Results:
+Set size: 24
+actual=274.24570338380016,ideal=163.000000000008, error=68.0% lineNumber = 5
+Average error margin: 30.0
+MSE: 0.20675118948189994
+ESS: 2.481014273782799
+RMS: 0.454699009765691
+ 
+DataEntries: 11100, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=313.70806265108575,ideal=147.00000000004601, error=113.0% lineNumber = 2548
+Average error margin: 4.951898734177215
+MSE: 0.013786763998042257
+ESS: 54.45771779226691
+RMS: 0.11741705156425218
+ 
+Neural Network Results:
+Set size: 24
+actual=233.41429807791826,ideal=134.999999999981, error=73.0% lineNumber = 6
+Average error margin: 31.333333333333332
+MSE: 0.2527808075583831
+ESS: 3.0333696907005976
+RMS: 0.5027731173783888
+ 
+DataEntries: 11124, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.66775423533835,ideal=147.00000000004601, error=115.0% lineNumber = 2524
+Average error margin: 5.039113924050633
+MSE: 0.014079935135548822
+ESS: 55.61574378541785
+RMS: 0.11865890247069043
+ 
+Neural Network Results:
+Set size: 24
+actual=241.8824115051696,ideal=405.000000000041, error=40.0% lineNumber = 12
+Average error margin: 20.291666666666668
+MSE: 0.21047596293740534
+ESS: 2.525711555248864
+RMS: 0.4587765937113677
+ 
+DataEntries: 11148, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.27773755832294,ideal=147.00000000004601, error=114.0% lineNumber = 2500
+Average error margin: 4.940253164556962
+MSE: 0.013765969474432354
+ESS: 54.375579424007796
+RMS: 0.11732846830344439
+ 
+Neural Network Results:
+Set size: 24
+actual=241.74444953876213,ideal=401.999999999978, error=40.0% lineNumber = 13
+Average error margin: 16.0
+MSE: 0.12135895382515345
+ESS: 1.4563074459018415
+RMS: 0.3483661203750351
+ 
+DataEntries: 11172, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=317.576327853029,ideal=147.00000000004601, error=116.0% lineNumber = 2476
+Average error margin: 5.032405063291139
+MSE: 0.01425185287618141
+ESS: 56.294818860916564
+RMS: 0.1193811244551726
+ 
+Neural Network Results:
+Set size: 24
+actual=202.5870098408427,ideal=131.999999999918, error=53.0% lineNumber = 20
+Average error margin: 14.625
+MSE: 0.03371329092561972
+ESS: 0.40455949110743666
+RMS: 0.18361179408093511
+ 
+DataEntries: 11196, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=319.5434474478154,ideal=147.00000000004601, error=117.0% lineNumber = 2452
+Average error margin: 4.990126582278481
+MSE: 0.013964417576606986
+ESS: 55.15944942759759
+RMS: 0.11817113681693592
+ 
+Neural Network Results:
+Set size: 24
+actual=216.87083416255456,ideal=134.999999999981, error=61.0% lineNumber = 12
+Average error margin: 22.416666666666668
+MSE: 0.059573060557739865
+ESS: 0.7148767266928784
+RMS: 0.2440759319509809
+ 
+DataEntries: 11220, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.86094380984935,ideal=147.00000000004601, error=114.0% lineNumber = 2428
+Average error margin: 5.0030379746835445
+MSE: 0.013986280155796813
+ESS: 55.24580661539741
+RMS: 0.11826360452733044
+ 
+Neural Network Results:
+Set size: 24
+actual=227.86312155550172,ideal=156.000000000048, error=46.0% lineNumber = 20
+Average error margin: 14.708333333333334
+MSE: 0.05530165942208837
+ESS: 0.6636199130650604
+RMS: 0.2351630485898845
+ 
+DataEntries: 11244, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=315.6774790283848,ideal=147.00000000004601, error=115.0% lineNumber = 2404
+Average error margin: 5.133291139240506
+MSE: 0.014523683316615294
+ESS: 57.36854910063041
+RMS: 0.12051424528500891
+ 
+Neural Network Results:
+Set size: 24
+actual=271.66261525422766,ideal=395.000000000018, error=31.0% lineNumber = 23
+Average error margin: 16.333333333333332
+MSE: 0.10384667968175665
+ESS: 1.2461601561810798
+RMS: 0.32225250919388765
+ 
+DataEntries: 11268, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=318.44336516382594,ideal=147.00000000004601, error=117.0% lineNumber = 2380
+Average error margin: 5.088354430379747
+MSE: 0.014227083019640877
+ESS: 56.196977927581464
+RMS: 0.11927733657170954
+ 
+Neural Network Results:
+Set size: 24
+actual=238.98300742842997,ideal=434.99999999992303, error=45.0% lineNumber = 23
+Average error margin: 20.958333333333332
+MSE: 0.22481348787797217
+ESS: 2.697761854535666
+RMS: 0.47414500722666286
+ 
+DataEntries: 11292, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.49923021349645,ideal=147.00000000004601, error=115.0% lineNumber = 2356
+Average error margin: 5.060126582278481
+MSE: 0.014156806491767029
+ESS: 55.91938564247977
+RMS: 0.11898237891287529
+ 
+Neural Network Results:
+Set size: 24
+actual=248.1965770557112,ideal=175.00000000007302, error=42.0% lineNumber = 18
+Average error margin: 19.166666666666668
+MSE: 0.11428352275807695
+ESS: 1.3714022730969233
+RMS: 0.3380584605627804
+ 
+DataEntries: 11316, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=304.2508686750479,ideal=147.00000000004601, error=107.0% lineNumber = 2332
+Average error margin: 5.025949367088607
+MSE: 0.01381937583019474
+ESS: 54.58653452926922
+RMS: 0.11755584132740805
+ 
+Neural Network Results:
+Set size: 24
+actual=350.0368534898329,ideal=217.00000000002, error=61.0% lineNumber = 10
+Average error margin: 32.541666666666664
+MSE: 0.16404776070564323
+ESS: 1.9685731284677186
+RMS: 0.40502809866186223
+ 
+DataEntries: 11340, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.25905054033797,ideal=147.00000000004601, error=114.0% lineNumber = 2308
+Average error margin: 5.075443037974684
+MSE: 0.014190290734999956
+ESS: 56.05164840324983
+RMS: 0.11912300674093126
+ 
+Neural Network Results:
+Set size: 24
+actual=220.3047287300045,ideal=138.000000000044, error=60.0% lineNumber = 21
+Average error margin: 20.916666666666668
+MSE: 0.051653881961779675
+ESS: 0.6198465835413561
+RMS: 0.22727490394185557
+ 
+DataEntries: 11364, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.0057489716996,ideal=147.00000000004601, error=115.0% lineNumber = 2284
+Average error margin: 5.085569620253165
+MSE: 0.013947555489949613
+ESS: 55.09284418530097
+RMS: 0.11809976922056034
+ 
+Neural Network Results:
+Set size: 24
+actual=257.11441523297253,ideal=489.999999999956, error=48.0% lineNumber = 23
+Average error margin: 16.708333333333332
+MSE: 0.18021428094603695
+ESS: 2.1625713713524433
+RMS: 0.42451652611651874
+ 
+DataEntries: 11388, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=318.1109928597631,ideal=147.00000000004601, error=116.0% lineNumber = 2260
+Average error margin: 5.164430379746835
+MSE: 0.014777152452655882
+ESS: 58.369752187990734
+RMS: 0.12156131149611657
+ 
+Neural Network Results:
+Set size: 24
+actual=278.9753437984407,ideal=184.999999999909, error=51.0% lineNumber = 13
+Average error margin: 21.916666666666668
+MSE: 0.09650544273960725
+ESS: 1.158065312875287
+RMS: 0.31065325161602164
+ 
+DataEntries: 11412, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=304.54441811859687,ideal=147.00000000004601, error=107.0% lineNumber = 2236
+Average error margin: 5.107088607594937
+MSE: 0.014250114606267386
+ESS: 56.28795269475618
+RMS: 0.11937384389499815
+ 
+Neural Network Results:
+Set size: 24
+actual=257.5962301778449,ideal=408.999999999938, error=37.0% lineNumber = 21
+Average error margin: 19.875
+MSE: 0.13835557888239275
+ESS: 1.660266946588713
+RMS: 0.37196179761151915
+ 
+DataEntries: 11436, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=313.07431527793335,ideal=147.00000000004601, error=113.0% lineNumber = 2212
+Average error margin: 5.154810126582278
+MSE: 0.014131954619991128
+ESS: 55.821220748964954
+RMS: 0.11887789794571205
+ 
+Neural Network Results:
+Set size: 24
+actual=244.13837242647236,ideal=326.0000000000089, error=25.0% lineNumber = 21
+Average error margin: 13.208333333333334
+MSE: 0.07178734080852874
+ESS: 0.8614480897023449
+RMS: 0.2679315972567042
+ 
+DataEntries: 11460, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=310.7298723515824,ideal=147.00000000004601, error=111.0% lineNumber = 2188
+Average error margin: 5.150632911392405
+MSE: 0.014630795373451614
+ESS: 57.79164172513387
+RMS: 0.12095782477149469
+ 
+Neural Network Results:
+Set size: 24
+actual=244.4416310246702,ideal=336.999999999922, error=27.0% lineNumber = 11
+Average error margin: 15.125
+MSE: 0.08445325255824411
+ESS: 1.0134390306989294
+RMS: 0.2906084179067153
+ 
+DataEntries: 11484, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=315.796788220635,ideal=147.00000000004601, error=115.0% lineNumber = 2164
+Average error margin: 5.087341772151898
+MSE: 0.014277466010819174
+ESS: 56.39599074273574
+RMS: 0.11948835094191891
+ 
+Neural Network Results:
+Set size: 24
+actual=202.85689273463032,ideal=137.000000000023, error=48.0% lineNumber = 15
+Average error margin: 23.458333333333332
+MSE: 0.07131367709977747
+ESS: 0.8557641251973296
+RMS: 0.26704620779890786
+ 
+DataEntries: 11508, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.5046045303404,ideal=147.00000000004601, error=114.0% lineNumber = 2140
+Average error margin: 5.084050632911392
+MSE: 0.014250955928978388
+ESS: 56.29127591946463
+RMS: 0.11937736774187303
+ 
+Neural Network Results:
+Set size: 24
+actual=195.9886206370445,ideal=151.999999999964, error=29.0% lineNumber = 11
+Average error margin: 13.75
+MSE: 0.02375026288500359
+ESS: 0.28500315462004305
+RMS: 0.15411120298344178
+ 
+DataEntries: 11532, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.6729926361838,ideal=147.00000000004601, error=112.0% lineNumber = 2116
+Average error margin: 5.152278481012658
+MSE: 0.014526198353135152
+ESS: 57.37848349488385
+RMS: 0.12052467943593607
+ 
+Neural Network Results:
+Set size: 24
+actual=183.07836078395337,ideal=386.00000000001603, error=53.0% lineNumber = 18
+Average error margin: 30.375
+MSE: 0.5652196595226536
+ESS: 6.782635914271843
+RMS: 0.7518109200607914
+ 
+DataEntries: 11556, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.93083598239923,ideal=147.00000000004601, error=116.0% lineNumber = 2092
+Average error margin: 5.2025316455696204
+MSE: 0.01491578908617759
+ESS: 58.91736689040148
+RMS: 0.12213021364993017
+ 
+Neural Network Results:
+Set size: 24
+actual=202.25853180497523,ideal=451.000000000072, error=55.0% lineNumber = 16
+Average error margin: 35.833333333333336
+MSE: 0.6749821434365043
+ESS: 8.099785721238051
+RMS: 0.8215729690274044
+ 
+DataEntries: 11580, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=309.31687854294654,ideal=147.00000000004601, error=110.0% lineNumber = 2068
+Average error margin: 5.138860759493671
+MSE: 0.014393310655779147
+ESS: 56.85357709032763
+RMS: 0.11997212449473064
+ 
+Neural Network Results:
+Set size: 24
+actual=245.96649393535068,ideal=454.999999999969, error=46.0% lineNumber = 11
+Average error margin: 28.458333333333332
+MSE: 0.46406045662090323
+ESS: 5.568725479450839
+RMS: 0.6812198298793887
+ 
+DataEntries: 11604, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.60790394940847,ideal=147.00000000004601, error=115.0% lineNumber = 2044
+Average error margin: 5.196835443037974
+MSE: 0.014682417508531762
+ESS: 57.995549158700456
+RMS: 0.12117102586233956
+ 
+Neural Network Results:
+Set size: 24
+actual=250.2989691333845,ideal=181.000000000012, error=38.0% lineNumber = 3
+Average error margin: 22.458333333333332
+MSE: 0.1929721310832334
+ESS: 2.315665572998801
+RMS: 0.4392859331724992
+ 
+DataEntries: 11628, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=312.47283805094344,ideal=147.00000000004601, error=113.0% lineNumber = 2020
+Average error margin: 5.173037974683544
+MSE: 0.01424492769861684
+ESS: 56.26746440953652
+RMS: 0.11935211643962096
+ 
+Neural Network Results:
+Set size: 24
+actual=240.0707375063277,ideal=181.000000000012, error=33.0% lineNumber = 24
+Average error margin: 14.583333333333334
+MSE: 0.07739751142529917
+ESS: 0.9287701371035901
+RMS: 0.27820408233039856
+ 
+DataEntries: 11652, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=312.6683895979691,ideal=147.00000000004601, error=113.0% lineNumber = 1996
+Average error margin: 5.1448101265822785
+MSE: 0.014399877837509725
+ESS: 56.87951745816341
+RMS: 0.1199994909885443
+ 
+Neural Network Results:
+Set size: 24
+actual=225.8825930812134,ideal=158.999999999924, error=42.0% lineNumber = 16
+Average error margin: 14.083333333333334
+MSE: 0.028112552791253118
+ESS: 0.3373506334950374
+RMS: 0.16766798379909362
+ 
+DataEntries: 11676, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=306.1185071641567,ideal=147.00000000004601, error=108.0% lineNumber = 1972
+Average error margin: 5.205316455696202
+MSE: 0.014617672074327818
+ESS: 57.739804693594884
+RMS: 0.12090356518452142
+ 
+Neural Network Results:
+Set size: 24
+actual=194.1784343189538,ideal=138.000000000044, error=41.0% lineNumber = 5
+Average error margin: 23.0
+MSE: 0.08927567698682475
+ESS: 1.0713081238418969
+RMS: 0.29879035624803013
+ 
+DataEntries: 11700, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=313.9583804182857,ideal=147.00000000004601, error=114.0% lineNumber = 1948
+Average error margin: 5.188607594936709
+MSE: 0.01461229303336917
+ESS: 57.718557481808226
+RMS: 0.12088131796671134
+ 
+Neural Network Results:
+Set size: 24
+actual=222.13104614152417,ideal=371.999999999909, error=40.0% lineNumber = 2
+Average error margin: 28.333333333333332
+MSE: 0.24163566529076017
+ESS: 2.899627983489122
+RMS: 0.4915645077614536
+ 
+DataEntries: 11724, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.0105048177424,ideal=147.00000000004601, error=115.0% lineNumber = 1924
+Average error margin: 5.160632911392405
+MSE: 0.01432728516269579
+ESS: 56.59277639264837
+RMS: 0.11969663805928632
+ 
+Neural Network Results:
+Set size: 24
+actual=299.26126359350866,ideal=408.999999999938, error=27.0% lineNumber = 2
+Average error margin: 16.458333333333332
+MSE: 0.14229239810985003
+ESS: 1.7075087773182005
+RMS: 0.37721664611977296
+ 
+DataEntries: 11748, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=313.777065197775,ideal=147.00000000004601, error=113.0% lineNumber = 1900
+Average error margin: 5.189873417721519
+MSE: 0.01472662166279884
+ESS: 58.17015556805542
+RMS: 0.12135329275631065
+ 
+Neural Network Results:
+Set size: 24
+actual=309.9998928108222,ideal=445.99999999996703, error=30.0% lineNumber = 9
+Average error margin: 16.708333333333332
+MSE: 0.17342923683399133
+ESS: 2.081150842007896
+RMS: 0.4164483603449428
+ 
+DataEntries: 11772, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.1560250412156,ideal=147.00000000004601, error=115.0% lineNumber = 1876
+Average error margin: 5.205569620253165
+MSE: 0.01458556793369223
+ESS: 57.61299333808431
+RMS: 0.1207707246549934
+ 
+Neural Network Results:
+Set size: 24
+actual=286.9143490905993,ideal=157.000000000069, error=83.0% lineNumber = 24
+Average error margin: 24.833333333333332
+MSE: 0.1823368912178008
+ESS: 2.1880426946136096
+RMS: 0.42700924020189635
+ 
+DataEntries: 11796, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=322.0674769054601,ideal=147.00000000004601, error=119.0% lineNumber = 1852
+Average error margin: 5.266835443037975
+MSE: 0.014784035750625785
+ESS: 58.39694121497185
+RMS: 0.12158962024213163
+ 
+Neural Network Results:
+Set size: 24
+actual=206.29831526785694,ideal=146.000000000025, error=41.0% lineNumber = 24
+Average error margin: 18.0
+MSE: 0.12585132493378764
+ESS: 1.5102158992054517
+RMS: 0.3547553028973459
+ 
+DataEntries: 11820, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=313.069674376895,ideal=147.00000000004601, error=113.0% lineNumber = 1828
+Average error margin: 5.226582278481013
+MSE: 0.014694458585299202
+ESS: 58.04311141193185
+RMS: 0.12122070196669875
+ 
+Neural Network Results:
+Set size: 24
+actual=228.0131087195206,ideal=167.000000000092, error=37.0% lineNumber = 12
+Average error margin: 20.5
+MSE: 0.04913923203519164
+ESS: 0.5896707844222997
+RMS: 0.2216737062332645
+ 
+DataEntries: 11844, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=315.8279771746114,ideal=147.00000000004601, error=115.0% lineNumber = 1804
+Average error margin: 5.296835443037975
+MSE: 0.015170013996256365
+ESS: 59.92155528521264
+RMS: 0.12316661072001764
+ 
+Neural Network Results:
+Set size: 24
+actual=262.1124038938109,ideal=175.00000000007302, error=50.0% lineNumber = 9
+Average error margin: 19.458333333333332
+MSE: 0.08585199222136242
+ESS: 1.030223906656349
+RMS: 0.29300510613530684
+ 
+DataEntries: 11868, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.8691936970943,ideal=147.00000000004601, error=114.0% lineNumber = 1780
+Average error margin: 5.324556962025317
+MSE: 0.015046337689055155
+ESS: 59.43303387176786
+RMS: 0.12266351409060135
+ 
+Neural Network Results:
+Set size: 24
+actual=202.8133544097003,ideal=131.000000000084, error=55.0% lineNumber = 10
+Average error margin: 19.791666666666668
+MSE: 0.05701298139672717
+ESS: 0.684155776760726
+RMS: 0.23877391272232226
+ 
+DataEntries: 11892, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=319.74248002948804,ideal=147.00000000004601, error=118.0% lineNumber = 1756
+Average error margin: 5.335569620253165
+MSE: 0.014986880171880946
+ESS: 59.19817667892974
+RMS: 0.12242091394807077
+ 
+Neural Network Results:
+Set size: 24
+actual=289.7698962770186,ideal=452.999999999927, error=36.0% lineNumber = 21
+Average error margin: 19.291666666666668
+MSE: 0.22330759538853362
+ESS: 2.6796911446624034
+RMS: 0.4725543306208648
+ 
+DataEntries: 11916, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=318.479955548253,ideal=147.00000000004601, error=117.0% lineNumber = 1732
+Average error margin: 5.325569620253164
+MSE: 0.0146365971713409
+ESS: 57.81455882679655
+RMS: 0.12098180512515466
+ 
+Neural Network Results:
+Set size: 24
+actual=274.0361869952517,ideal=454.999999999969, error=40.0% lineNumber = 16
+Average error margin: 21.666666666666668
+MSE: 0.2656525401146821
+ESS: 3.187830481376185
+RMS: 0.5154149203454262
+ 
+DataEntries: 11940, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=312.30396814375297,ideal=147.00000000004601, error=112.0% lineNumber = 1708
+Average error margin: 5.386582278481012
+MSE: 0.01505839291515246
+ESS: 59.48065201485221
+RMS: 0.12271264366458927
+ 
+Neural Network Results:
+Set size: 24
+actual=262.79508555610477,ideal=168.999999999947, error=56.0% lineNumber = 13
+Average error margin: 17.5
+MSE: 0.08505526590835698
+ESS: 1.0206631909002837
+RMS: 0.29164235959194434
+ 
+DataEntries: 11964, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=306.35484596699695,ideal=147.00000000004601, error=108.0% lineNumber = 1684
+Average error margin: 5.347848101265823
+MSE: 0.015067348055998893
+ESS: 59.51602482119563
+RMS: 0.12274912649790586
+ 
+Neural Network Results:
+Set size: 24
+actual=233.68363764931763,ideal=160.999999999966, error=45.0% lineNumber = 13
+Average error margin: 17.208333333333332
+MSE: 0.059941838857468316
+ESS: 0.7193020662896198
+RMS: 0.2448302245587099
+ 
+DataEntries: 11988, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.5170436596011,ideal=147.00000000004601, error=115.0% lineNumber = 1660
+Average error margin: 5.3103797468354434
+MSE: 0.014712857822788831
+ESS: 58.11578840001588
+RMS: 0.12129656970742755
+ 
+Neural Network Results:
+Set size: 24
+actual=206.5841926835496,ideal=129.000000000042, error=60.0% lineNumber = 12
+Average error margin: 20.0
+MSE: 0.04783138921736183
+ESS: 0.573976670608342
+RMS: 0.21870388477885305
+ 
+DataEntries: 12012, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=320.6644719241952,ideal=147.00000000004601, error=118.0% lineNumber = 1636
+Average error margin: 5.355569620253164
+MSE: 0.014803650348558507
+ESS: 58.4744188768061
+RMS: 0.12167025252114219
+ 
+Neural Network Results:
+Set size: 24
+actual=240.99404576148544,ideal=401.999999999978, error=40.0% lineNumber = 20
+Average error margin: 24.458333333333332
+MSE: 0.26753334016456015
+ESS: 3.210400081974722
+RMS: 0.5172362517888321
+ 
+DataEntries: 12036, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=308.27457059901275,ideal=147.00000000004601, error=110.0% lineNumber = 1612
+Average error margin: 5.374050632911392
+MSE: 0.01507329272941408
+ESS: 59.539506281185616
+RMS: 0.1227733388379337
+ 
+Neural Network Results:
+Set size: 24
+actual=227.87520486705878,ideal=439.000000000007, error=48.0% lineNumber = 19
+Average error margin: 28.791666666666668
+MSE: 0.5112526272058419
+ESS: 6.135031526470103
+RMS: 0.7150193194633567
+ 
+DataEntries: 12060, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=316.08318659459337,ideal=147.00000000004601, error=115.0% lineNumber = 1588
+Average error margin: 5.393417721518987
+MSE: 0.015184157579157547
+ESS: 59.97742243767231
+RMS: 0.12322401380882521
+ 
+Neural Network Results:
+Set size: 24
+actual=225.90901412724475,ideal=395.000000000018, error=43.0% lineNumber = 21
+Average error margin: 26.916666666666668
+MSE: 0.3416781640386278
+ESS: 4.1001379684635335
+RMS: 0.58453243198186
+ 
+DataEntries: 12084, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=317.44019214308645,ideal=147.00000000004601, error=116.0% lineNumber = 1564
+Average error margin: 5.377088607594937
+MSE: 0.015371536458345488
+ESS: 60.71756901046468
+RMS: 0.12398200054179433
+ 
+Neural Network Results:
+Set size: 24
+actual=248.79547106253307,ideal=167.000000000092, error=49.0% lineNumber = 5
+Average error margin: 24.458333333333332
+MSE: 0.2167608885658612
+ESS: 2.6011306627903346
+RMS: 0.4655758676798672
+ 
+DataEntries: 12108, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.48854917906715,ideal=147.00000000004601, error=112.0% lineNumber = 1540
+Average error margin: 5.364683544303798
+MSE: 0.015256737066611882
+ESS: 60.264111413116936
+RMS: 0.1235181649256978
+ 
+Neural Network Results:
+Set size: 24
+actual=283.9410662616368,ideal=159.999999999945, error=77.0% lineNumber = 4
+Average error margin: 25.041666666666668
+MSE: 0.18349160282011498
+ESS: 2.2018992338413796
+RMS: 0.4283591983605756
+ 
+DataEntries: 12132, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=311.99278825875825,ideal=147.00000000004601, error=112.0% lineNumber = 1516
+Average error margin: 5.426835443037975
+MSE: 0.015669403558998863
+ESS: 61.89414405804551
+RMS: 0.12517748822771155
+ 
+Neural Network Results:
+Set size: 24
+actual=223.8606785552046,ideal=133.99999999996, error=67.0% lineNumber = 5
+Average error margin: 17.416666666666668
+MSE: 0.057475261035963114
+ESS: 0.6897031324315573
+RMS: 0.23973998631009202
+ 
+DataEntries: 12156, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=313.86209284867374,ideal=147.00000000004601, error=114.0% lineNumber = 1492
+Average error margin: 5.383164556962026
+MSE: 0.015287231095267686
+ESS: 60.38456282630736
+RMS: 0.12364154275674372
+ 
+Neural Network Results:
+Set size: 24
+actual=213.48875675143046,ideal=142.999999999962, error=49.0% lineNumber = 4
+Average error margin: 20.5
+MSE: 0.054316802933923346
+ESS: 0.6518016352070801
+RMS: 0.23305965531151748
+ 
+DataEntries: 12180, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.77210898457787,ideal=147.00000000004601, error=114.0% lineNumber = 1468
+Average error margin: 5.389620253164557
+MSE: 0.015154844389435977
+ESS: 59.86163533827211
+RMS: 0.12310501366490309
+ 
+Neural Network Results:
+Set size: 24
+actual=408.50340584340773,ideal=151.999999999964, error=169.0% lineNumber = 18
+Average error margin: 89.70833333333333
+MSE: 0.72302407890934
+ESS: 8.676288946912079
+RMS: 0.8503082258271644
+ 
+DataEntries: 12204, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=314.17549041245815,ideal=147.00000000004601, error=114.0% lineNumber = 1444
+Average error margin: 5.471012658227848
+MSE: 0.01595703043635615
+ESS: 63.03027022360679
+RMS: 0.12632114010076123
+ 
+Neural Network Results:
+Set size: 24
+actual=198.49685436203717,ideal=133.99999999996, error=48.0% lineNumber = 8
+Average error margin: 22.25
+MSE: 0.22101546920233547
+ESS: 2.6521856304280256
+RMS: 0.47012282352842166
+ 
+DataEntries: 12228, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=308.0985140867749,ideal=147.00000000004601, error=110.0% lineNumber = 1420
+Average error margin: 5.473417721518987
+MSE: 0.015717291526139515
+ESS: 62.08330152825109
+RMS: 0.12536862257414938
+ 
+Neural Network Results:
+Set size: 24
+actual=331.1434510168598,ideal=127.0, error=161.0% lineNumber = 11
+Average error margin: 26.625
+MSE: 0.18444366050478586
+ESS: 2.2133239260574302
+RMS: 0.4294690448737672
+ 
+DataEntries: 12252, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=315.8357389269634,ideal=147.00000000004601, error=115.0% lineNumber = 1396
+Average error margin: 5.514430379746836
+MSE: 0.015849848199185036
+ESS: 62.60690038678089
+RMS: 0.12589618024064525
+ 
+Neural Network Results:
+Set size: 24
+actual=403.7523160124837,ideal=150.99999999994301, error=167.0% lineNumber = 23
+Average error margin: 38.083333333333336
+MSE: 0.34267037386392957
+ESS: 4.112044486367155
+RMS: 0.5853805376538663
+ 
+DataEntries: 12276, TestEntries: 24, Epochs: 2000, UseTestData: true, LimitEntries: true, Firstlayer#: 20, SecondLayer: false, SecondLayer#: 2
+7900
+Neural Network Results:
+Set size: 7900
+actual=313.7027368569734,ideal=147.00000000004601, error=113.0% lineNumber = 1372
+Average error margin: 5.544050632911392
+MSE: 0.0161641696206557
+ESS: 63.84847000159001
+RMS: 0.1271383876752246
+ 
+Neural Network Results:
+Set size: 24
+actual=217.54606254947143,ideal=131.000000000084, error=66.0% lineNumber = 5
+Average error margin: 21.041666666666668
+MSE: 0.10061900114975443
+ESS: 1.2074280137970532
+RMS: 0.31720498285770105
+ 
+AverageOfAveragesSeen: 19.097083333333327

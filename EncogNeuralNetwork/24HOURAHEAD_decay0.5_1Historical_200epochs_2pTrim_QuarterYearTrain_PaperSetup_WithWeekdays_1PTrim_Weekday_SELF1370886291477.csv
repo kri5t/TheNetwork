@@ -1,0 +1,3 @@
+"DataEntries: 8756, TestEntries: 24, Epochs: 200, UseTestData: true, LimitEntries: true, Firstlayer#: 6, SecondLayer: true, SecondLayer#: 14, Predict: true, Curvebehaviour: false, Stacksize: 6, useLastXDays: false, Max: 632.0, Min: 61.0, Curve behaviour: false, Historical: true, useAverage: false, priceStack2, Skewness: false, SkewStack: 12",", useNewMethod: false, decay: 0.5"
+"Range: 6567 to 8756"
+"Actual","Ideal"
