@@ -17,13 +17,13 @@ public class LatexTableCreator {
 
     public static void main(String[] args) {
 
-        File directory = new File("newPredictions/");
+        File directory = new File("newPredictions/NewestPredictions/");
 
         File[] files = directory.listFiles();
 
         TreeMap<Double,String> sortedMapOfMAEs = new TreeMap<Double,String>();
         for(File f : files) {
-            if(f.getName().contains("PREDICT"))createLatexTable(f,sortedMapOfMAEs);
+            if(f.getName().contains("PREDICT") && !f.getName().contains("Trim"))createLatexTable(f,sortedMapOfMAEs);
         }
 
         int rank = 0;

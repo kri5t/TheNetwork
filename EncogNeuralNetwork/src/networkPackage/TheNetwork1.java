@@ -942,21 +942,41 @@ public class TheNetwork1 {
 //		}
 		File folderen = new File("runFilesFolder");
 		File[] listOfFiles = folderen.listFiles();
-		TheNetwork1.removeUnwantedItems(listOfFiles);
+		//TheNetwork1.removeUnwantedItems(listOfFiles);
 		
-		for (File file : listOfFiles) {
-			start = 6567;
-			if (file.isFile() && !file.getName().equals(".DS_Store") && !file.getName().contains("1PTrim") ) {
-				for(int i = 0; i < 10; i++){
-					network.setMax(1561.0);
-					network.setMin(1.0);
+			for (File file : listOfFiles) {
+				start = 6567;
+				if (file.isFile() && !file.getName().equals(".DS_Store")) {
+					network.setMax(1561);
+					network.setMin(1);
+					if(file.getName().contains("1PTrim")){
+						network.setMax(631.0);
+						network.setMin(62.0);
+					}
+					if(file.getName().contains("2PTrim")){
+						network.setMax(558.0);
+						network.setMin(74.0);
+					}
+					if(file.getName().contains("3PTrim")){
+						network.setMax(524.0);
+						network.setMin(86.0);
+					}
+					if(file.getName().contains("4PTrim")){
+						network.setMax(510.0);
+						network.setMin(108.0);
+					}
+					if(file.getName().contains("5PTrim")){
+						network.setMax(502.0);
+						network.setMin(126.0);
+					}
+					
 					
 					System.out.println(file.getName());
 					network.setNewFile("runFilesFolder/" + file.getName());
 					network.setMethods(false, false, false);
-					network.runOneYear(i + "NEWQuarterTrain_" + file.getName().replace(".csv", "").replace("runFilesFolder/", "newPredictions/").replace("00", ""), start, 8756, 200, 0, 24, 1);
+					network.runOneYear("TEN_NEWQuarterTrain_" + file.getName().replace(".csv", "").replace("runFilesFolder/", "newPredictions/").replace("00", ""), start, 8756, 200, 0, 24, 1);
 				}
-			}
+			
 		}
 		System.exit(0);
 		start = 6567;

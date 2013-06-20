@@ -121,10 +121,21 @@ public class AveragePredictPrice implements Runnable{
 	
 	public static void main(String[] args) throws Exception{
 		List<StatisticsObject> list = Collections.synchronizedList(new ArrayList<StatisticsObject>());
-
+//		File folderen1 = new File("newPredictions");
+//		File[] listOfFiles1 = folderen1.listFiles();
+//		for(File f : listOfFiles1){
+//			if(!f.isDirectory() && !f.getName().contains(".DS_Store")){
+//				File two = new File(f.getName().replace("NEWQuarterTrain", ""));
+//				boolean lol = f.renameTo(two);
+//				if(!lol){
+//					System.out.println("Failed");
+//				}
+//			}
+//		}
+//		System.exit(0);
 		System.out.println("--------------------------------------------------------");
 		String inputFile = "statisticsObjects.csv";
-		boolean reset = false;
+		boolean reset = true;
 		try{
 			if(!reset){
 				csvReader = new CSVReader(new FileReader(inputFile));
@@ -167,7 +178,7 @@ public class AveragePredictPrice implements Runnable{
 		int numberOfThreads = list.size();
 		for (int i = 0; i < listOfFiles.length; i++) {
 			if (listOfFiles[i].isFile()) {
-				if(listOfFiles[i].getName().contains("PREDICT") && (!fileNamesInTheSystem.contains(listOfFiles[i].getName()) || reset) ){
+				if(listOfFiles[i].getName().contains("PREDICT") && (!fileNamesInTheSystem.contains(listOfFiles[i].getName()) || reset) && listOfFiles[i].getName().contains("5PTrim") && !listOfFiles[i].getName().contains("weekdaystimeOfDayMATRIX")){
 					es.execute(new AveragePredictPrice(folderName + "/" + listOfFiles[i].getName(), list));
 					numberOfThreads++;
 				}
@@ -182,12 +193,12 @@ public class AveragePredictPrice implements Runnable{
 		System.out.println("Time it took to execute: " + (Calendar.getInstance().getTimeInMillis() - startTime));
 		System.out.println("List size: " + list.size());
 		System.out.println("Number of threads: " + numberOfThreads);
-		if(numberOfThreads - list.size() != 0) throw new Exception("Mismatch i antal trŒde og antal oprettede objekter.");
+		//if(numberOfThreads - list.size() != 0) throw new Exception("Mismatch i antal trŒde og antal oprettede objekter.");
 		System.out.println("BEST MAE: ");
 		Collections.sort(list, new MaeComparator());
 		for(StatisticsObject so : list){
 			if(!Double.isNaN(so.getMae())){
-				System.out.println(so.getFileName());
+				System.out.println(so.getFileName().replace("newPredictions/", ""));
 				System.out.println(so.getMae());
 			}
 		}
@@ -203,7 +214,8 @@ public class AveragePredictPrice implements Runnable{
 		
 		
 		MyCSVWriter csvWriter = new MyCSVWriter();
-		csvWriter.setNewOutputFile(inputFile, null);
+		System.out.println("INPUTFILE: " + inputFile);
+		csvWriter.setNewOutputFile("/"+inputFile, null);
 		for(StatisticsObject so: list){
 			String[] lineToWrite = {so.getFileName(), so.getBelowTenPercent()+"", so.getMae()+"", so.getMpe()+"", so.getBelowTenPercentHIGH()+"",so.getMaeHIGH()+"",so.getMpeHIGH()+"",so.getBelowTenPercentLOW()+"",so.getMaeLow()+"",so.getMpeLow()+"",so.getBelowTenPercentMIDDLE()+"",so.getMaeMIDDLE()+"",so.getMpeMIDDLE()+""};
 			csvWriter.writeLineToFile(lineToWrite);
@@ -233,7 +245,12 @@ public class AveragePredictPrice implements Runnable{
 		System.out.println("MAE file: " + list.get(0).getFileName() + " MAE: "+list.get(0).getMaeHIGH());
 		Collections.sort(list, new MpeComparatorHigh());
 		System.out.println("MPE file: " + list.get(0).getFileName() + " MPE: "+list.get(0).getMpeHIGH());
-//		for(int i = 0; i < 4; i++){
+		List<StatisticsObject> listOfObjectsToRemove = new ArrayList<StatisticsObject>();
+//		for(StatisticsObject so : list){
+//			if(so.getFileName().contains("Trim")) listOfObjectsToRemove.add(so);
+//		}
+//		list.removeAll(listOfObjectsToRemove);
+//		for(int i = 0; i < 11; i++){
 //			String fileName = "";
 //			boolean first = true;
 //			double timesSeen = 0.0;
@@ -259,9 +276,42 @@ public class AveragePredictPrice implements Runnable{
 //				}
 //			}
 //			System.out.println(fileName);
-//			System.out.println(MAE/timesSeen);
-//			System.out.println(MPE/timesSeen);
+//			//System.out.println(MAE/timesSeen);
+//			//System.out.println(MPE/timesSeen);
 //			list.removeAll(removeObjects);
 //		}
+		
+		String[] filesList = {"newPredictions/TEN__MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDay_weekdaysMATRIX_monthOfYearMATRIX",
+							  "newPredictions/TEN__MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays",
+							  "newPredictions/TEN__MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays_monthOfYearMATRIX",
+							  "newPredictions/TEN__MIXEDPrice_Consump_windSpeed_timeOfDayMATRIX_weekdays_monthOfYearMATRIX",
+							  "newPredictions/TEN__MATRIX_Price_Consump_windSpeed_temperatureRow_timeOfDay_weekdays_seasonOfYear",
+							  "newPredictions/TEN__MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays_seasonOfYearMATRIX",
+							  "newPredictions/TEN__MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_monthOfYearMATRIX",
+							  "newPredictions/TEN__MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_seasonOfYearMATRIX",
+							  "newPredictions/TEN__MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDay_weekdays_seasonOfYearMATRIX",
+							  "newPredictions/TEN__MATRIX_Price_Consump_windSpeed_timeOfDay_weekdays_monthOfYear"};
+		for(String s : filesList){
+			for(StatisticsObject so : list){
+//				System.out.println(so.getFileName());
+//				System.out.println(s);
+				String fileName = so.getFileName().replace("5PTrim_", "");
+				fileName = fileName.replace("5PTrim", "");
+				fileName = fileName.substring(0,fileName.indexOf("_PREDICT"));
+				if(fileName.equals(s)){
+					System.out.println(s);
+					System.out.println(roundIt(so.getMae(), 2));
+				}
+			}
+		}
+	}
+	
+	public static double roundIt(double value, int places){
+        if (places < 0) throw new IllegalArgumentException();
+
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
 	}
 } 
