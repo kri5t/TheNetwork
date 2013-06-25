@@ -17,35 +17,50 @@ public class LatexTableCreator {
 
     public static void main(String[] args) {
 
-        File directory = new File("newPredictions/NewestPredictions/");
+        File directory = new File("newPredictions/");
 
         File[] files = directory.listFiles();
 
         TreeMap<Double,String> sortedMapOfMAEs = new TreeMap<Double,String>();
         for(File f : files) {
-            if(f.getName().contains("PREDICT") && !f.getName().contains("Trim"))createLatexTable(f,sortedMapOfMAEs);
+            if(!f.getName().contains(".DS_Store") && f.getName().contains("PREDICT") && !f.getName().contains("X1") && !f.getName().contains("weekdaystimeOfDayMATRIX") && !f.getName().contains("TEN"))createLatexTable(f,sortedMapOfMAEs);
         }
 
         int rank = 0;
         for(Map.Entry<Double,String> entry : sortedMapOfMAEs.entrySet()) {
             rank++;
-            double mae = entry.getKey();
+            Double mae = entry.getKey();
             String line = entry.getValue();
-            line += mae + " & \\#" + rank + " \\\\";
+
+            line += " " + doubleToStringWithFixedDecimals(mae) + " & \\#" + rank + " \\\\";
             System.out.println(line);
         }
+    }
+    
+    public static String doubleToStringWithFixedDecimals(Double mae){
+    	String decimalFixedString = "";
+        String[] splitDouble = mae.toString().split("\\.");
+        if(splitDouble[1].length() == 1) decimalFixedString = mae.toString() + "0";
+        else return mae.toString();
+        return decimalFixedString;
     }
     
     public static void createLatexTable(File file, TreeMap<Double,String> sortedMapOfMAEs) {
         try {
             CSVReader csvreader = new CSVReader(new FileReader(file),',');
             String totalString = "";
-            String [] rows = {"Price", "Consump", "windSpeed", "temperatureRow", "timeOfDay", "weekdays", "monthOfYear", "seasonOfYear", "MATRIX"};
+            String [] rows = {"Price", "Consump", "windSpeed", "temperatureRow", "timeOfDay", "weekdays", "monthOfYear", "seasonOfYear"};
+            List<String> matrixStrings = new ArrayList<String>();
+            matrixStrings.add("timeOfDay"); matrixStrings.add("weekdays"); matrixStrings.add("monthOfYear"); matrixStrings.add("seasonOfYear");
+            boolean allAreMatrix = false;
+            if(file.getName().indexOf("_Price") != -1 && file.getName().substring(0, file.getName().indexOf("_Price")).equals("NEWQuarterTrain_MATRIX")) allAreMatrix = true;
             for(String s : rows) {
                 if(file.getName().toLowerCase().contains(s.toLowerCase())) {
-                    totalString+=" x &";
+                	if((file.getName().toLowerCase().contains(s.toLowerCase() + "matrix") 
+                			|| allAreMatrix) && matrixStrings.contains(s)) totalString+=" \\x\\m  &";
+                	else totalString+=" \\x    &";
                 } else {
-                    totalString+= " &";
+                    totalString+= "       &";
                 }
             }
 

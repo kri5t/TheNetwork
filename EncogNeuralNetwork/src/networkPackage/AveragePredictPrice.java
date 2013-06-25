@@ -178,7 +178,7 @@ public class AveragePredictPrice implements Runnable{
 		int numberOfThreads = list.size();
 		for (int i = 0; i < listOfFiles.length; i++) {
 			if (listOfFiles[i].isFile()) {
-				if(listOfFiles[i].getName().contains("PREDICT") && (!fileNamesInTheSystem.contains(listOfFiles[i].getName()) || reset) && listOfFiles[i].getName().contains("5PTrim") && !listOfFiles[i].getName().contains("weekdaystimeOfDayMATRIX")){
+				if(listOfFiles[i].getName().contains("PREDICT") && (!fileNamesInTheSystem.contains(listOfFiles[i].getName()) || reset) && listOfFiles[i].getName().contains("SAMEX1") && !listOfFiles[i].getName().contains("FullYear")){
 					es.execute(new AveragePredictPrice(folderName + "/" + listOfFiles[i].getName(), list));
 					numberOfThreads++;
 				}
@@ -215,7 +215,7 @@ public class AveragePredictPrice implements Runnable{
 		
 		MyCSVWriter csvWriter = new MyCSVWriter();
 		System.out.println("INPUTFILE: " + inputFile);
-		csvWriter.setNewOutputFile("/"+inputFile, null);
+		csvWriter.setNewOutputFile(inputFile, null, false);
 		for(StatisticsObject so: list){
 			String[] lineToWrite = {so.getFileName(), so.getBelowTenPercent()+"", so.getMae()+"", so.getMpe()+"", so.getBelowTenPercentHIGH()+"",so.getMaeHIGH()+"",so.getMpeHIGH()+"",so.getBelowTenPercentLOW()+"",so.getMaeLow()+"",so.getMpeLow()+"",so.getBelowTenPercentMIDDLE()+"",so.getMaeMIDDLE()+"",so.getMpeMIDDLE()+""};
 			csvWriter.writeLineToFile(lineToWrite);
@@ -245,7 +245,7 @@ public class AveragePredictPrice implements Runnable{
 		System.out.println("MAE file: " + list.get(0).getFileName() + " MAE: "+list.get(0).getMaeHIGH());
 		Collections.sort(list, new MpeComparatorHigh());
 		System.out.println("MPE file: " + list.get(0).getFileName() + " MPE: "+list.get(0).getMpeHIGH());
-		List<StatisticsObject> listOfObjectsToRemove = new ArrayList<StatisticsObject>();
+//		List<StatisticsObject> listOfObjectsToRemove = new ArrayList<StatisticsObject>();
 //		for(StatisticsObject so : list){
 //			if(so.getFileName().contains("Trim")) listOfObjectsToRemove.add(so);
 //		}

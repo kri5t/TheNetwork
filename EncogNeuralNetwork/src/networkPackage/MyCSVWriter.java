@@ -28,6 +28,17 @@ public class MyCSVWriter {
 		} catch (IOException e) {System.out.println(e);}
 	}
 	
+	public void setNewOutputFile(String outputFile, String[] header, boolean forOther){
+		try {
+			if(csvWriter != null) csvWriter.close();
+			csvWriter = new CSVWriter(new FileWriter(outputFile));
+			if(header != null){
+				csvWriter.writeNext(header);
+				csvWriter.flush();
+			}
+		} catch (IOException e) {System.out.println(e);}
+	}
+	
 	public void closeIt(){
 		try {
 			if(csvWriter != null){

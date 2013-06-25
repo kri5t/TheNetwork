@@ -9,8 +9,8 @@ import java.util.Map;
 import java.util.Stack;
 
 import org.apache.commons.math3.stat.descriptive.moment.Skewness;
-import org.encog.ConsoleStatusReportable;
 import org.encog.Encog;
+import org.encog.NullStatusReportable;
 import org.encog.engine.network.activation.ActivationTANH;
 import org.encog.mathutil.error.ErrorCalculation;
 import org.encog.ml.data.MLData;
@@ -64,6 +64,7 @@ public class TheNetwork1 {
 	private int turningPointsPlace = 0;
 	private int skewnessPlace = 0;
 	private int averagePlace = 0;
+	private boolean checkNetworkDone = false;
 	
 	//Parameters set from here:
 	private String inputFile = "YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne.csv";
@@ -95,9 +96,9 @@ public class TheNetwork1 {
 		this.useTestSet = useTest;
 		this.limitNumberOfEntries = limitNumberOfEntries;
 		this.mute = mute;
-		this.numberOfFirstLayerNeurons = numberOfNeurons;
+		this.numberOfFirstLayerNeurons = 0;
 		this.useHiddenLayer = useSecondLayer;
-		this.numberOfSecondLayerNeurons = numberOfSecondLayerNeurons;
+		this.numberOfSecondLayerNeurons = 0;
 		this.myCsvWriter = new MyCSVWriter();
 		this.myCsvWriterOnSelf = new MyCSVWriter();
 		priceStack = new Stack<Double>();
@@ -115,6 +116,11 @@ public class TheNetwork1 {
 			if(theNetwork != null){
 				numberOfNeurons = theNetwork.getLayerNeuronCount(1);
 				numberOfSecondLayerNeurons = theNetwork.getLayerNeuronCount(2);
+			}
+			else if(!checkNetworkDone){
+				numberOfNeurons = numberOfFirstLayerNeurons;
+				if(useHiddenLayer) numberOfSecondLayerNeurons = this.numberOfSecondLayerNeurons;
+				else numberOfSecondLayerNeurons = 0;
 			}
 			myCsvWriterOnSelf.writeLineToFile(new String[]{"DataEntries: " + numberOfDataEntries + ", TestEntries: " + numberOfTestEntries + ", Epochs: " + numberOfEpochs
 					+ ", UseTestData: " + useTest + ", LimitEntries: " + limitNumberOfEntries + ", Firstlayer#: " + numberOfNeurons + 
@@ -136,9 +142,11 @@ public class TheNetwork1 {
 		this.useTestSet = useTest;
 		this.limitNumberOfEntries = limitNumberOfEntries;
 		this.mute = mute;
-		this.numberOfFirstLayerNeurons = numberOfNeurons;
-		this.useHiddenLayer = useSecondLayer;
-		this.numberOfSecondLayerNeurons = numberOfSecondLayerNeurons;
+		if(!checkNetworkDone){
+			this.numberOfFirstLayerNeurons = numberOfNeurons;
+			this.useHiddenLayer = useSecondLayer;
+			this.numberOfSecondLayerNeurons = numberOfSecondLayerNeurons;
+		}
 		this.ranges = myMap;
 	}
 	
@@ -570,10 +578,13 @@ public class TheNetwork1 {
 		numberOfInputs = 0;
 		sumOfValuesSeenInNetwork = 0;
 		timesSeenSumOfValuesInNetwork = 0;
+		numberOfFirstLayerNeurons = 0;
+		numberOfSecondLayerNeurons = 0;
 		firstRunCompleted = false;
 		priceStack = new Stack<Double>();
 		decayStack = new Stack<Double>();
 		skewnessStack = new Stack<Double>();
+		theNetwork = null;
 	}
 	
 	public static double denormalizePrice(double value) {	        
@@ -605,6 +616,7 @@ public class TheNetwork1 {
 	
 	public void checkNetwork(int testSetStart, int testSetStop){
 		theNetwork = null;
+		checkNetworkDone = true;
 		HashMap<Integer,Integer> ranges = new HashMap<Integer,Integer>();
 		ranges.put(testSetStart, testSetStop);
 		createDataSetSpecificMonths(ranges);
@@ -616,18 +628,29 @@ public class TheNetwork1 {
         pattern.setActivationFunction(new ActivationTANH());
 
         PruneIncremental prune = new PruneIncremental(trainingSet,pattern, 200, 4, 10,
-                new ConsoleStatusReportable());
+                new NullStatusReportable());
 
-        prune.addHiddenLayer(5, 30);
-        prune.addHiddenLayer(0, 30);
+        prune.addHiddenLayer(5, 25);
+        prune.addHiddenLayer(0, 25);
 
         prune.process();
-
-        theNetwork = prune.getBestNetwork();
-        theNetwork.getLayerTotalNeuronCount(0);
-        System.out.println("Best network info Architecture: " + theNetwork.getFactoryArchitecture());
-        System.out.println("Best network layers: " + theNetwork.getLayerCount());
-        System.out.println("Best network info: " + theNetwork.getStructure().toString());
+        
+        BasicNetwork bestNetwork = prune.getBestNetwork();
+        
+//		this.numberOfFirstLayerNeurons = bestNetwork.getLayerNeuronCount(1);
+//		if(bestNetwork.getLayerNeuronCount(2) > 1){
+//			this.useHiddenLayer = true;
+//			this.numberOfSecondLayerNeurons = bestNetwork.getLayerNeuronCount(2);
+//		}
+        theNetwork = bestNetwork;
+        
+        try{
+        Thread.sleep(5000);
+        }
+        catch(Exception e){}
+        if(!mute)System.out.println("Best network info Architecture: " + theNetwork.getFactoryArchitecture());
+        if(!mute)System.out.println("Best network layers: " + theNetwork.getLayerCount());
+        if(!mute)System.out.println("Best network info: " + theNetwork.getStructure().toString());
 	}
 	
 	private void setLastXdays(int offset, MLDataSet trainingSet, int j, double predicted){
@@ -748,14 +771,15 @@ public class TheNetwork1 {
         return norm.normalize(turningPoints);
     }
 	
-    public void runOneYear(String fileName, int testSetStart, int testSetStop, int epochs, int offSet, int hoursToPredictAhead, int divider){
+    public void runOneYear(String fileName, int testSetStart, int testSetStop, int epochs, int offSet, int hoursToPredictAhead, int divider, boolean useSameMonth){
     	String[] headerArray = {"actual", "ideal"};
     	this.reconfigCsvWriter(fileName, headerArray);
 		for(int i = 0; i<(7680/divider/hoursToPredictAhead); i++){ //
 			HashMap<Integer,Integer> ranges = new HashMap<Integer,Integer>();
 			int index = i * hoursToPredictAhead;
+			if(useSameMonth) ranges.put(0 + index + offSet, 720 + index + offSet);
 			ranges.put(testSetStart+index+offSet, testSetStop+index+offSet);
-			this.setValues(testSetStop+index+offSet, hoursToPredictAhead, epochs, true, true, mute, 6, true, 14, ranges);
+			this.setValues(testSetStop+index+offSet, hoursToPredictAhead, epochs, true, true, mute, 5, true, 4, ranges);
 			this.run();
 		}
 		this.calculateAverageOfValuesSeen();
@@ -800,379 +824,124 @@ public class TheNetwork1 {
 //		numberOfDataEntries, numberOfTestEntries, numberOfEpochs, useTest, limitNumberOfEntries, mute, numberOfNeurons, useSecondLayer, numberOfSecondLayerNeurons
 		
 //		Normalizer.normalizeFiles("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_NotNormalized.csv","YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOneNORMALIZED.csv");
-		boolean mute = true;
+		boolean mute = false;
 		TheNetwork1 network = new TheNetwork1(7000, 24, 10000, true, true, mute, 20, false, 0);
 		network.setUsePrediction(true);
-		
-//		theNetwork.useLastXdays = true;
-//		int start = 0;
-		//theNetwork.checkNetwork(start, 8756);
+
 		//historical -- curve -- skew
-//		theNetwork.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withLastTenPrices.csv");		
-//		theNetwork.setMethods(false, false, false);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_LastTenDays_Historical", start, 8756, 3000, 0);
-		
-		
-		
 		int start = 0;
-//		theNetwork.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne.csv");	
-//		theNetwork.checkNetwork(start, 8756);
-//		theNetwork.setMethods(false, false, false);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_StandardSet_Standard", start, 8756, 3000, 672);
-//		theNetwork.setMethods(true, false, false);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_StandardSet_Historical", start, 8756, 3000, 672);
-//		theNetwork.setMethods(true, true, false);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_StandardSet_Historical_Curve", start, 8756, 3000, 672);
-//		theNetwork.setMethods(true, false, true);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_StandardSet_Historical_Skew", start, 8756, 3000, 672);
-//		theNetwork.setMethods(false, true, false);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_StandardSet_Curve", start, 8756, 3000, 672);
-//		theNetwork.setMethods(false, false, true);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_StandardSet_Skew", start, 8756, 3000, 672);
-		
-//		network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withPaperPrices.csv");		
-//		network.checkNetwork(0, 8756);
-//		network.setMethods(false, false, false);
-//		network.runOneYear("2pTrim_1YearTrain_PaperSetup_Standard", start, 8756, 3000, 0);
-//		network.setMethods(true, false, false);
-//		network.runOneYear("2pTrim_1YearTrain_PaperSetup_Historical", start, 8756, 3000, 0);
-//		network.setMethods(true, true, false);
-//		network.runOneYear("2pTrim_1YearTrain_PaperSetup_Historical_Curve", start, 8756, 3000, 0);
-//		network.setMethods(true, false, true);
-//		network.runOneYear("2pTrim_1YearTrain_PaperSetup_Historical_Skew", start, 8756, 3000, 0);
-//		network.setMethods(false, true, false);
-//		network.runOneYear("2pTrim_1YearTrain_PaperSetup_Curve", start, 8756, 3000, 0);
-//		network.setMethods(false, false, true);
-//		network.runOneYear("2pTrim_1YearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-//		
-//		start = 4378;
-//		network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne.csv");	
-//		network.checkNetwork(start, 8756);
-//		network.setMethods(false, false, false);
-//		network.runOneYear("2pTrim_HalfYearTrain_StandardSet_Standard", start, 8756, 3000, 672);
-//		network.setMethods(true, false, false);
-//		network.runOneYear("2pTrim_HalfYearTrain_StandardSet_Historical", start, 8756, 3000, 672);
-//		network.setMethods(true, true, false);
-//		network.runOneYear("2pTrim_HalfYearTrain_StandardSet_Historical_Curve", start, 8756, 3000, 672);
-//		network.setMethods(true, false, true);
-//		network.runOneYear("2pTrim_HalfYearTrain_StandardSet_Historical_Skew", start, 8756, 3000, 672);
-//		network.setMethods(false, true, false);
-//		network.runOneYear("2pTrim_HalfYearTrain_StandardSet_Curve", start, 8756, 3000, 672);
-//		network.setMethods(false, false, true);
-//		network.runOneYear("2pTrim_HalfYearTrain_StandardSet_Skew", start, 8756, 3000, 672);
-////		
-//		network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withPaperPrices.csv");		
-//		network.checkNetwork(start, 8756);
-//		network.setMethods(false, false, false);
-//		network.runOneYear("2pTrim_HalfYearTrain_PaperSetup_Standard", start, 8756, 3000, 0);
-//		network.setMethods(true, false, false);
-//		network.runOneYear("2pTrim_HalfYearTrain_PaperSetup_Historical", start, 8756, 3000, 0);
-//		network.setMethods(true, true, false);
-//		network.runOneYear("2pTrim_HalfYearTrain_PaperSetup_Historical_Curve", start, 8756, 3000, 0);
-//		network.setMethods(true, false, true);
-//		network.runOneYear("2pTrim_HalfYearTrain_PaperSetup_Historical_Skew", start, 8756, 3000, 0);
-//		network.setMethods(false, true, false);
-//		network.runOneYear("2pTrim_HalfYearTrain_PaperSetup_Curve", start, 8756, 3000, 0);
-//		network.setMethods(false, false, true);
-//		network.runOneYear("2pTrim_HalfYearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-//		
-		start = 0;
-//		network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne.csv");	
-//		network.checkNetwork(start, 8756);
-//		network.setMethods(false, false, false);
-//		network.runOneYear("2pTrim_QuarterYearTrain_StandardSet_Historical", start, 8756, 3000, 672);
-//		network.setMethods(true, false, false);
-//		network.runOneYear("2pTrim_QuarterYearTrain_StandardSet_Historical", start, 8756, 3000, 672);
-//		network.setMethods(true, true, false);
-//		network.runOneYear("2pTrim_QuarterYearTrain_StandardSet_Historical_Curve", start, 8756, 3000, 672);
-//		network.setMethods(true, false, true);
-//		network.runOneYear("2pTrim_QuarterYearTrain_StandardSet_Historical_Skew", start, 8756, 3000, 672);
-//		network.setMethods(false, true, false);
-//		network.runOneYear("2pTrim_QuarterYearTrain_StandardSet_Curve", start, 8756, 3000, 672);
-//		network.setMethods(false, false, true);
-//		network.runOneYear("2pTrim_QuarterYearTrain_StandardSet_Skew", start, 8756, 3000, 672);
-//		
-		
-		network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withPaperPrices.csv");		
-			
-//		network.checkNetwork(start, 8756);
-//		network.setMethods(true, false, false);
-//		network.runOneYear("2pTrim_QuarterYearTrain_PaperSetup_Standard", start, 8756, 3000, 0);
-//		network.setMethods(true, false, false);
-//		network.runOneYear("24daysAverage_24hist_2pTrim_QuarterYearTrain_PaperSetup_Historical", start, 8756, 3000, 0);
-//		network.setMethods(true, true, false);
-//		network.runOneYear("2pTrim_QuarterYearTrain_PaperSetup_Historical_Curve", start, 8756, 3000, 0);
-//		network.setMethods(true, false, true);
-//		network.runOneYear("24daysAverage_24hist_12skew_2pTrim_QuarterYearTrain_PaperSetup_Historical_Skew", start, 8756, 3000, 0);
-//		network.setMethods(false, true, false);
-//		network.runOneYear("2pTrim_QuarterYearTrain_PaperSetup_Curve", start, 8756, 3000, 0);
-//		network.setMethods(false, false, true);
-//		network.runOneYear("2pTrim_QuarterYearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-		
-//		network.useNewMethod = false;
-//		network.useAverage = false;
-		
-//		network.checkNetwork(start, 8756);
-//		network.skewnessStackSize = 24;
-//		network.setMethods(false, false, true);
-//		network.runOneYear("Normalized24skew_2pTrim_QuarterYearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-//		
-//		network.skewnessStackSize = 48;
-//		network.setMethods(false, false, true);
-//		network.runOneYear("Normalized48skew_2pTrim_QuarterYearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-//		
-//		network.skewnessStackSize = 24;
-//		network.priceStackSize = 24;
-//		network.setMethods(true, false, false);
-//		network.runOneYear("Historical_2pTrim_QuarterYearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-		
-		
-//		network.runOneYear("1HOURAHEAD_24Historical_200epochs_2pTrim_QuarterYearTrain_PaperSetup", start, 8756, 200, 0, 1, 1);
-//		network.runOneYear("3HOURAHEAD_24Historical_200epochs_2pTrim_QuarterYearTrain_PaperSetup", start, 8756, 200, 0, 2, 1);
-//		network.runOneYear("3HOURAHEAD_24Historical_200epochs_2pTrim_QuarterYearTrain_PaperSetup", start, 8756, 200, 0, 3, 1);
-//		network.runOneYear("4HOURAHEAD_24Historical_200epochs_2pTrim_QuarterYearTrain_PaperSetup", start, 8756, 200, 0, 4, 1);
-//		network.runOneYear("5HOURAHEAD_24Historical_200epochs_2pTrim_QuarterYearTrain_PaperSetup", start, 8756, 200, 0, 5, 1);
-//		network.runOneYear("6HOURAHEAD_24Historical_200epochs_2pTrim_QuarterYearTrain_PaperSetup", start, 8756, 200, 0, 6, 1);
-//		network.runOneYear("7HOURAHEAD_24Historical_200epochs_2pTrim_QuarterYearTrain_PaperSetup", start, 8756, 200, 0, 7, 1);
-//		network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withPaperPrices_1PTrim_Weekday.csv");	
-//		for(double j = 0; j < 10; j += 1){
-//			//network.checkNetwork(start, 8756);
-//			network.decay = 0.5;
-//			network.runOneYear(j+"ATTEMT24HOURAHEAD_decay0.5_1Historical_200epochs_2pTrim_QuarterYearTrain_PaperSetup_WithWeekdays_1PTrim_Weekday", start, 8756, 200, 0, 24, 1);
-//		}
+
 		File folderen = new File("runFilesFolder");
 		File[] listOfFiles = folderen.listFiles();
 		//TheNetwork1.removeUnwantedItems(listOfFiles);
-		
+		for(int i = 2; i <= 5; i++){
 			for (File file : listOfFiles) {
 				start = 6567;
 				if (file.isFile() && !file.getName().equals(".DS_Store")) {
-					network.setMax(1561);
+					network.setMax(1561.0);
 					network.setMin(1);
-					if(file.getName().contains("1PTrim")){
-						network.setMax(631.0);
-						network.setMin(62.0);
-					}
-					if(file.getName().contains("2PTrim")){
-						network.setMax(558.0);
-						network.setMin(74.0);
-					}
-					if(file.getName().contains("3PTrim")){
-						network.setMax(524.0);
-						network.setMin(86.0);
-					}
-					if(file.getName().contains("4PTrim")){
-						network.setMax(510.0);
-						network.setMin(108.0);
-					}
-					if(file.getName().contains("5PTrim")){
-						network.setMax(502.0);
-						network.setMin(126.0);
-					}
+	//				if(file.getName().contains("1PTrim")){
+	//					network.setMax(631.0);
+	//					network.setMin(62.0);
+	//				}
+	//				if(file.getName().contains("2PTrim")){
+	//					network.setMax(558.0);
+	//					network.setMin(74.0);
+	//				}
+	//				if(file.getName().contains("3PTrim")){
+	//					network.setMax(524.0);
+	//					network.setMin(86.0);
+	//				}
+	//				if(file.getName().contains("4PTrim")){
+	//					network.setMax(510.0);
+	//					network.setMin(108.0);
+	//				}
+	//				if(file.getName().contains("5PTrim")){
+	//					network.setMax(502.0);
+	//					network.setMin(126.0);
+	//				}
 					
 					
 					System.out.println(file.getName());
 					network.setNewFile("runFilesFolder/" + file.getName());
+					//network.checkNetwork(start, 8756);
 					network.setMethods(false, false, false);
-					network.runOneYear("TEN_NEWQuarterTrain_" + file.getName().replace(".csv", "").replace("runFilesFolder/", "newPredictions/").replace("00", ""), start, 8756, 200, 0, 24, 1);
-				}
-			
-		}
-		System.exit(0);
-		start = 6567;
-		String file ="";
-		network.setPriceStackSize(1);
-		for(int i = 2; i <= 2; i++){
-			String dataSet = "";
-			if(i == 1) {
-				start = 4378;
-				dataSet = "halfYear";
-			}
-			if(i == 2) {
-				start = 0;
-				dataSet = "fullYear";
-			}
-			for(int j = 2; j<=4; j++){
-				int offset = 0;
-				if(j ==1){
-					network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withPaperPrices_1PTrim_Weekday.csv");
-					file = "Paper_1PTrim_weekday";
-					network.setMax(632);
-					network.setMin(61);
-				}
-				else if(j == 2){
-					network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withPaperPrices.csv");
-					file = "Paper";
-				}
-				else if(j == 3){
-					network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne.csv");
-					file = "Standard";
-					offset = 672;
-				}
-				else{
-					network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withPaperPrices_5PTrim_Weekday.csv");
-					file = "Paper_5PTrim_weekday";
-					network.setMax(502);
-					network.setMin(126);
-				}
-				int epochs = 200;
-	//			network.checkNetwork(start, 8756);
-				network.setMethods(false, false, false);
-				network.runOneYear("NEW"+dataSet+"Train_" + file, start, 8756, epochs, offset, 24, 1);
-				network.setMethods(true, false, false);
-				network.runOneYear("NEW"+dataSet+"Train_1Historical_" + file, start, 8756, epochs, offset, 24, 1);
-				network.setMethods(true, true, false);
-				network.runOneYear("NEW"+dataSet+"Train_1Historical_Curve_" + file, start, 8756, epochs, offset, 24, 1);
-				network.setMethods(true, false, true);
-				network.runOneYear("NEW"+dataSet+"Train_1Historical_Skew_" + file, start, 8756, epochs, offset, 24, 1);
-				network.setMethods(false, true, false);
-				network.runOneYear("NEW"+dataSet+"Train_Curve_" + file, start, 8756, epochs, offset, 24, 1);
-				network.setMethods(false, false, true);
-				network.runOneYear("NEW"+dataSet+"Train_Skew_" + file, start, 8756, epochs, offset, 24, 1);
-				try {
-					Thread.sleep(10000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+					network.runOneYear(i+"SAMEX1_SesonalTest" + file.getName().replace(".csv", "").replace("runFilesFolder/", "newPredictions/").replace("00", ""), start, 8756, 200, 0, 24, 1, false);
 				}
 			}
 		}
 		
-		
-		
-//		network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withPaperPrices_5pTrim.csv");
-		
-		//network.checkNetwork(start, 8756);
-//		network.setMax(501);
-//		network.setMin(127);
-//		network.skewnessStackSize = 24;
-//		network.setMethods(false, false, true);
-//		network.runOneYear("Normalized24skew_5pTrim_QuarterYearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-		
-//		network.priceStackSize = 24;
-//		network.setMethods(true, false, false);
-//		network.runOneYear("24Historical_5pTrim_QuarterYearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-		
-//		network.priceStackSize = 96;
-//		network.setMethods(true, false, false);
-//		network.runOneYear("96Historical_5pTrim_QuarterYearTrain_PaperSetup", start, 8756, 3000, 0);
-//		
-//		network.priceStackSize = 12;
-//		network.setMethods(true, false, false);
-//		network.runOneYear("12Historical_5pTrim_QuarterYearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-		
-		
-//		network.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withPaperPrices_NOTrim.csv");
-//		network.checkNetwork(start, 8756);
-//		network.setMax(1561);
-//		network.setMin(1);
-//		network.priceStackSize = 96;
-//		network.setMethods(true, false, false);
-//		network.runOneYear("96Historical_5pTrim_QuarterYearTrain_PaperSetup", start, 8756, 3000, 0);
-//		
-//		network.priceStackSize = 24;
-//		network.setMethods(true, false, false);
-//		network.runOneYear("96Historical_5pTrim_QuarterYearTrain_PaperSetup", start, 8756, 3000, 0);
-//		
-//		
-//		network.priceStackSize = 12;
-//		network.setMethods(true, false, false);
-//		network.runOneYear("96Historical_5pTrim_QuarterYearTrain_PaperSetup", start, 8756, 3000, 0);
-//		
-//		
-		
-//		network.skewnessStackSize = 6;
-//		network.setMethods(false, false, true);
-//		network.runOneYear("12_hours_Normalized6skew_2pTrim_1YearTrain_PaperSetup_Skew", start, 8756, 3000, 0);
-//		network.setMethods(true, true, false);
-//		network.runOneYear("2pTrim_QuarterYearTrain_PaperSetup_Historical_Curve", start, 8756, 3000, 0);
-//		network.useNewMethod = true;
-//		network.useAverage = true;
-//		network.setMethods(false, false, true);
-//		network.runOneYear("newMethod_24daysAverage_12skew_2pTrim_QuarterYearTrain_PaperSetup_Historical_Skew", start, 8756, 3000, 0);
-		
-//		theNetwork.useLastXdays = true;
-//		start = 0;
-//		//historical -- curve -- skew
-//		theNetwork.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withLastTenPrices.csv");		
-//		theNetwork.checkNetwork(0, 8756);
-//		theNetwork.setMethods(true, false, false);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_LastTenDays_Historical", start, 8756, 3000, 0);
-//		theNetwork.setMethods(true, true, false);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_LastTenDays_Historical_Curve", start, 8756, 3000, 0);
-//		theNetwork.setMethods(true, false, true);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_LastTenDays_Historical_Skew", start, 8756, 3000, 0);
-//		theNetwork.setMethods(false, true, false);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_LastTenDays_Curve", start, 8756, 3000, 0);
-//		theNetwork.setMethods(false, false, true);
-//		theNetwork.runOneYear("2pTrim_1YearTrain_LastTenDays_Skew", start, 8756, 3000, 0);
-//		
-//		start = 4378;
-//		//historical -- curve -- skew	
-//		theNetwork.useLastXdays = true;
-//		theNetwork.checkNetwork(start, 8756);
-//		theNetwork.setMethods(false, false, false);
-//		theNetwork.runOneYear("2pTrim_HalfYearTrain_LastTenDays_Standard", start, 8756, 3000, 0);
-//		theNetwork.setMethods(true, false, false);
-//		theNetwork.runOneYear("2pTrim_HalfYearTrain_LastTenDays_Historical", start, 8756, 3000, 0);
-//		theNetwork.setMethods(true, true, false);
-//		theNetwork.runOneYear("2pTrim_HalfYearTrain_LastTenDays_Historical_Curve", start, 8756, 3000, 0);
-//		theNetwork.setMethods(true, false, true);
-//		theNetwork.runOneYear("2pTrim_HalfYearTrain_LastTenDays_Historical_Skew", start, 8756, 3000, 0);
-//		theNetwork.setMethods(false, true, false);
-//		theNetwork.runOneYear("2pTrim_HalfYearTrain_LastTenDays_Curve", start, 8756, 3000, 0);
-//		theNetwork.setMethods(false, false, true);
-//		theNetwork.runOneYear("2pTrim_HalfYearTrain_LastTenDays_Skew", start, 8756, 3000, 0);
-//		
 //		start = 6567;
-//		theNetwork.checkNetwork(start, 8756);
-//		theNetwork.setMethods(true, false, false);
-//		theNetwork.runOneYear("2pTrim_QuarterYearTrain_LastTenDays_Historical", start, 8756, 3000, 0);
-//		theNetwork.setMethods(true, true, false);
-//		theNetwork.runOneYear("2pTrim_QuarterYearTrain_LastTenDays_Historical_Curve", start, 8756, 3000, 0);
-//		theNetwork.setMethods(true, false, true);
-//		theNetwork.runOneYear("2pTrim_QuarterYearTrain_LastTenDays_Historical_Skew", start, 8756, 3000, 0);
-//		theNetwork.setMethods(false, true, false);
-//		theNetwork.runOneYear("2pTrim_QuarterYearTrain_LastTenDays_Curve", start, 8756, 3000, 0);
-//		theNetwork.setMethods(false, false, true);
-//		theNetwork.runOneYear("2pTrim_QuarterYearTrain_LastTenDays_Skew", start, 8756, 3000, 0);
-//		
-		
-//		value = 0;
-//		theNetwork.setNewFile("YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne_withExtraPrices.csv");
-//		theNetwork.reconfigCsvWriter("PricesSet", headerArray);
-//		for(int i = 0; i<350; i++){
-//			HashMap<Integer,Integer> ranges = new HashMap<Integer,Integer>();
-//			int index = i * 24;
-//			ranges.put(0+value+index, 7831+value+index);
-//			theNetwork.setValues(7831+value+index, 24, 5000, true, true, mute, 25, true, 10, ranges);
-//			theNetwork.run();
-//		}
-//		theNetwork.calculateAverageOfValuesSeen();
-//		theNetwork.reset();
-		//1 Œr. Skift en dag frem.
-//		theNetwork.reconfigCsvWriter("Days100", headerArray);
-//		for(int i = 0; i<10; i++){
-//			HashMap<Integer, Integer> ranges = new HashMap<Integer, Integer>();
-//			int index = i * 24;
-//			ranges.put(0+index, 7831+index);
-//			theNetwork.setValues(7831+index, 24, 5000, true, true, mute, 20, true, 5, ranges);
-//			theNetwork.run();
-//		}
-//		theNetwork.calculateAverageOfValuesSeen();
-//		theNetwork.reset();
-		//1 Œr. Skift en dag frem.
-//		for(int j = 2; j<=8; j += 2){
-//			theNetwork.reconfigCsvWriter("20neurons" + j, headerArray);
-//			//		for(int i = 0; i<329; i++){
-//			for(int i = 0; i<329; i++){
-//				HashMap<Integer, Integer> ranges = new HashMap<Integer, Integer>();
-//				int index = i * 24;
-//				ranges.put(0+index, 7831+index);
-//				theNetwork.setValues(7831+index, 24, 4000, true, true, mute, 20, true, j, ranges);
-//				theNetwork.run();
+//		network.setMax(632);
+//		network.setMin(61);
+//		String dataSet = "";
+//		network.setPriceStackSize(1);
+//		for (File file : listOfFiles) {
+//			start = 6567;
+//			if (file.isFile() && !file.getName().equals(".DS_Store")) {
+//				int offset = 0;
+//				int epochs = 200;
+//				dataSet = file.getName();
+//				System.out.println(dataSet);
+//				network.setNewFile("runFilesFolder/MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays.csv");
+//				//network.checkNetwork(start, 8756);
+//				if(dataSet.contains("PAPER")){
+//					network.setMethods(false, false, false);
+//					network.runOneYear("X1_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				}
+//				network.setMethods(false, true, false);
+//				network.runOneYear("X1_Curve_" + dataSet, start, 8756, epochs, offset, 1, 1);
+//				network.setMethods(true, true, false);
+//				network.runOneYear("X1_1Historical_Curve_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				network.setMethods(true, false, true);
+//				network.runOneYear("X1_1Historical_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				network.setMethods(true, true, true);
+//				network.runOneYear("X1_1Historical_Curve_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				network.setMethods(true, false, false);
+//				network.runOneYear("X1_1Historical_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				network.setMethods(false, false, true);
+//				network.runOneYear("X1_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				network.setMethods(false, true, true);
+//				network.runOneYear("X1_Curve_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
 //			}
-//			theNetwork.calculateAverageOfValuesSeen();
 //		}
+		
+//		start = 6567;
+//		network.setMax(632);
+//		network.setMin(61);
+//		String dataSet = "";
+//		network.setPriceStackSize(1);
+//		for (int i = 2; i <= 20; i++) {
+//			start = 0;
+//			if (file.isFile() && !file.getName().equals(".DS_Store")) {
+//				int offset = 0;
+//				int epochs = 100 * i;
+//				System.out.println(dataSet);
+//				network.setNewFile("runFilesFolder/MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays.csv");
+				//network.checkNetwork(start, 8756);
+//				if(dataSet.contains("PAPER")){
+//					network.setMethods(false, false, false);
+//					network.runOneYear("X1_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				}
+				// useHistorical, useCurve, useSkew
+//				network.setNewFile("runFilesFolder/MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays.csv");
+//				network.setMethods(false, true, false);
+//				network.runOneYear("Epochs_Curve_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				// useHistorical, useCurve, useSkew
+//				network.setNewFile("runFilesFolder/MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays.csv");
+//				network.setMethods(true, true, false);
+//				network.runOneYear("Epochs_Curve_Historical_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				// useHistorical, useCurve, useSkew
+//				network.setNewFile("runFilesFolder/MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays.csv");
+//				network.setMethods(true, true, true);
+//				network.runOneYear("Epochs_Curve_Historical_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//				// useHistorical, useCurve, useSkew
+//				network.setNewFile("runFilesFolder/MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays.csv");
+//				network.setMethods(false, true, true);
+//				network.runOneYear("Epochs_Curve_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//			}
+//		}
+		
 		Encog.getInstance().shutdown();
 	}
 
