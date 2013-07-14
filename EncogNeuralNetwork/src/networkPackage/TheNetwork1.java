@@ -65,15 +65,17 @@ public class TheNetwork1 {
 	private int skewnessPlace = 0;
 	private int averagePlace = 0;
 	private boolean checkNetworkDone = false;
+	private int hiddenLayer1Nodes = 0;
+	private int hiddenLayer2Nodes = 0;
 	
 	//Parameters set from here:
 	private String inputFile = "YEAR_2012_DA_EXCEL_FOR_DA_PRICE_FORECAST_29-04-2013_ZeroToOne.csv";
 	private static double max = 632.0;
 	private static double min = 61.0;
-	public int curveStackSize = 6;
+	public int curveStackSize = 4;
 	private static int priceStackSize = 2;
-	public int skewnessStackSize = 12;
-	public static double decay = 0.1;
+	public int skewnessStackSize = 4;
+	public static double decay = 0.3;
 	public boolean usePrediction = true;
 	public boolean useLastKnown = true;
 	private BasicNetwork theNetwork = null;
@@ -85,6 +87,7 @@ public class TheNetwork1 {
 	public boolean useTurningpoints = false;
 	public boolean useSkewness = false;
 	public boolean useAverage = false;
+	public boolean useSimilarDays = false;
 	
 	public TheNetwork1(int numberOfDataEntries, int numberOfTestEntries, int numberOfEpochs
 						, boolean useTest, boolean limitNumberOfEntries, boolean mute
@@ -113,15 +116,6 @@ public class TheNetwork1 {
 				+ ", UseTestData: " + useTest + ", LimitEntries: " + limitNumberOfEntries + ", Firstlayer#: " + numberOfNeurons + 
 				", SecondLayer: " + useSecondLayer + ", SecondLayer#: " + numberOfSecondLayerNeurons);}
 		if(!firstRunCompleted){
-			if(theNetwork != null){
-				numberOfNeurons = theNetwork.getLayerNeuronCount(1);
-				numberOfSecondLayerNeurons = theNetwork.getLayerNeuronCount(2);
-			}
-			else if(!checkNetworkDone){
-				numberOfNeurons = numberOfFirstLayerNeurons;
-				if(useHiddenLayer) numberOfSecondLayerNeurons = this.numberOfSecondLayerNeurons;
-				else numberOfSecondLayerNeurons = 0;
-			}
 			myCsvWriterOnSelf.writeLineToFile(new String[]{"DataEntries: " + numberOfDataEntries + ", TestEntries: " + numberOfTestEntries + ", Epochs: " + numberOfEpochs
 					+ ", UseTestData: " + useTest + ", LimitEntries: " + limitNumberOfEntries + ", Firstlayer#: " + numberOfNeurons + 
 					", SecondLayer: " + useSecondLayer + ", SecondLayer#: " + numberOfSecondLayerNeurons+ ", Predict: " + usePrediction +
@@ -161,6 +155,7 @@ public class TheNetwork1 {
 		if(useTurningpoints) extras ++;
 		if(useSkewness) extras ++;
 		if(useAverage) extras ++;
+		if(useSimilarDays) extras++;
 		
 		extraVariables = extras;
 	}
@@ -487,7 +482,7 @@ public class TheNetwork1 {
 		    	outputArray[i] = outputData.get(i);
 		    }
 		    if(!mute){
-			    System.out.println("BiggestSkew: " + biggestSkew + " LowestSkew: " + lowestSkew);
+			    //System.out.println("BiggestSkew: " + biggestSkew + " LowestSkew: " + lowestSkew);
 		    	System.out.println(inputArray.length);
 		    }
 		} catch (Exception e) {e.printStackTrace();}
@@ -522,7 +517,7 @@ public class TheNetwork1 {
 	}
 	
 	public double[] createInputDataSet(String[] nextLine, Stack<Double> stack){
-		if(numberOfInputs == 0) numberOfInputs = nextLine.length-1+extraVariables;
+		numberOfInputs = nextLine.length-1+extraVariables;
 		double[] input = new double[nextLine.length-1+extraVariables];
 		//System.out.println();
 		for(int i = 0; i <= numberOfInputs; i++){
@@ -578,13 +573,15 @@ public class TheNetwork1 {
 		numberOfInputs = 0;
 		sumOfValuesSeenInNetwork = 0;
 		timesSeenSumOfValuesInNetwork = 0;
-		numberOfFirstLayerNeurons = 0;
-		numberOfSecondLayerNeurons = 0;
+		//numberOfFirstLayerNeurons = 0;
+		//numberOfSecondLayerNeurons = 0;
 		firstRunCompleted = false;
 		priceStack = new Stack<Double>();
 		decayStack = new Stack<Double>();
 		skewnessStack = new Stack<Double>();
-		theNetwork = null;
+		//theNetwork = null;
+		//hiddenLayer1Nodes = 0;
+		//hiddenLayer2Nodes = 0;
 	}
 	
 	public static double denormalizePrice(double value) {	        
@@ -614,10 +611,12 @@ public class TheNetwork1 {
 		return behaviourValue;
 	}
 	
-	public void checkNetwork(int testSetStart, int testSetStop){
+	public void checkNetwork(int testSetStart, int testSetStop, boolean writeIt){
 		theNetwork = null;
 		checkNetworkDone = true;
+		
 		HashMap<Integer,Integer> ranges = new HashMap<Integer,Integer>();
+		ranges.put(0, 720);
 		ranges.put(testSetStart, testSetStop);
 		createDataSetSpecificMonths(ranges);
 		MLDataSet trainingSet = new BasicMLDataSet(inputArray, outputArray);
@@ -636,7 +635,8 @@ public class TheNetwork1 {
         prune.process();
         
         BasicNetwork bestNetwork = prune.getBestNetwork();
-        
+        hiddenLayer1Nodes = bestNetwork.getLayerNeuronCount(1);
+        hiddenLayer2Nodes = bestNetwork.getLayerNeuronCount(2);
 //		this.numberOfFirstLayerNeurons = bestNetwork.getLayerNeuronCount(1);
 //		if(bestNetwork.getLayerNeuronCount(2) > 1){
 //			this.useHiddenLayer = true;
@@ -644,13 +644,17 @@ public class TheNetwork1 {
 //		}
         theNetwork = bestNetwork;
         
-        try{
-        Thread.sleep(5000);
-        }
-        catch(Exception e){}
         if(!mute)System.out.println("Best network info Architecture: " + theNetwork.getFactoryArchitecture());
         if(!mute)System.out.println("Best network layers: " + theNetwork.getLayerCount());
         if(!mute)System.out.println("Best network info: " + theNetwork.getStructure().toString());
+        if(writeIt){
+	        if(theNetwork.getLayerCount() == 3) hiddenLayer2Nodes = 0;
+	        myCsvWriterOnSelf.writeLineToFile(new String[]{"Firstlayer#: " + hiddenLayer1Nodes + 
+	        		", SecondLayer#: " + hiddenLayer2Nodes});
+	        myCsvWriterOnSelf.writeLineToFile(new String[]{theNetwork.getFactoryArchitecture()});
+	        myCsvWriterOnSelf.writeLineToFile(new String[]{theNetwork.getLayerCount()+""});
+	        
+        }
 	}
 	
 	private void setLastXdays(int offset, MLDataSet trainingSet, int j, double predicted){
@@ -717,7 +721,7 @@ public class TheNetwork1 {
 	public static double calculateSkewness() {
 		Skewness skewness = new Skewness();
 		double skew = 0.0;
-		if(skewnessStack.size()>5) {
+		if(skewnessStack.size()>0) {
 			double tempSkew = skewness.evaluate(turnDoubleStackToDoubleArray(skewnessStack));
 			if(!Double.isNaN(skew)) {
 				skew = normalizePrice(tempSkew, 3.3, -3.3);
@@ -773,13 +777,17 @@ public class TheNetwork1 {
 	
     public void runOneYear(String fileName, int testSetStart, int testSetStop, int epochs, int offSet, int hoursToPredictAhead, int divider, boolean useSameMonth){
     	String[] headerArray = {"actual", "ideal"};
+    	int firstLayerNodes =5;
+    	int secondLayerNodes = 8;
     	this.reconfigCsvWriter(fileName, headerArray);
 		for(int i = 0; i<(7680/divider/hoursToPredictAhead); i++){ //
 			HashMap<Integer,Integer> ranges = new HashMap<Integer,Integer>();
 			int index = i * hoursToPredictAhead;
 			if(useSameMonth) ranges.put(0 + index + offSet, 720 + index + offSet);
 			ranges.put(testSetStart+index+offSet, testSetStop+index+offSet);
-			this.setValues(testSetStop+index+offSet, hoursToPredictAhead, epochs, true, true, mute, 5, true, 4, ranges);
+			if(hiddenLayer1Nodes != 0) firstLayerNodes = hiddenLayer1Nodes;
+			if(hiddenLayer2Nodes != 0) secondLayerNodes = hiddenLayer2Nodes;
+			this.setValues(testSetStop+index+offSet, hoursToPredictAhead, epochs, true, true, mute, firstLayerNodes, true, secondLayerNodes, ranges);
 			this.run();
 		}
 		this.calculateAverageOfValuesSeen();
@@ -833,78 +841,116 @@ public class TheNetwork1 {
 
 		File folderen = new File("runFilesFolder");
 		File[] listOfFiles = folderen.listFiles();
-		//TheNetwork1.removeUnwantedItems(listOfFiles);
-		for(int i = 2; i <= 5; i++){
-			for (File file : listOfFiles) {
-				start = 6567;
-				if (file.isFile() && !file.getName().equals(".DS_Store")) {
-					network.setMax(1561.0);
-					network.setMin(1);
-	//				if(file.getName().contains("1PTrim")){
-	//					network.setMax(631.0);
-	//					network.setMin(62.0);
-	//				}
-	//				if(file.getName().contains("2PTrim")){
-	//					network.setMax(558.0);
-	//					network.setMin(74.0);
-	//				}
-	//				if(file.getName().contains("3PTrim")){
-	//					network.setMax(524.0);
-	//					network.setMin(86.0);
-	//				}
-	//				if(file.getName().contains("4PTrim")){
-	//					network.setMax(510.0);
-	//					network.setMin(108.0);
-	//				}
-	//				if(file.getName().contains("5PTrim")){
-	//					network.setMax(502.0);
-	//					network.setMin(126.0);
-	//				}
-					
-					
-					System.out.println(file.getName());
-					network.setNewFile("runFilesFolder/" + file.getName());
-					//network.checkNetwork(start, 8756);
-					network.setMethods(false, false, false);
-					network.runOneYear(i+"SAMEX1_SesonalTest" + file.getName().replace(".csv", "").replace("runFilesFolder/", "newPredictions/").replace("00", ""), start, 8756, 200, 0, 24, 1, false);
-				}
-			}
-		}
-		
-//		start = 6567;
-//		network.setMax(632);
-//		network.setMin(61);
-//		String dataSet = "";
-//		network.setPriceStackSize(1);
-//		for (File file : listOfFiles) {
-//			start = 6567;
-//			if (file.isFile() && !file.getName().equals(".DS_Store")) {
-//				int offset = 0;
-//				int epochs = 200;
-//				dataSet = file.getName();
-//				System.out.println(dataSet);
-//				network.setNewFile("runFilesFolder/MIXEDPrice_Consump_windSpeed_temperatureRow_timeOfDayMATRIX_weekdays.csv");
-//				//network.checkNetwork(start, 8756);
-//				if(dataSet.contains("PAPER")){
+//		
+//		for(int i = 500; i <= 500; i += 100){
+//			for (File file : listOfFiles) {
+//				start = 6567;
+//				if (file.isFile() && !file.getName().equals(".DS_Store")) {
+//					network.setMax(1561.0);
+//					network.setMin(1);
+//					network.setMax(632.0);
+//					network.setMin(61.0);
+//					if(file.getName().contains("1PTrim")){
+//						network.setMax(632.0);
+//						network.setMin(61.0);
+//					}
+//					
+//					if(i > 8) i = i * 2;
+//					if(file.getName().contains("2PTrim")){
+//						network.setMax(558.0);
+//						network.setMin(74.0);
+//					}
+//					if(file.getName().contains("3PTrim")){
+//						network.setMax(524.0);
+//						network.setMin(86.0);
+//					}
+//					if(file.getName().contains("4PTrim")){
+//						network.setMax(510.0);
+//						network.setMin(108.0);
+//					}
+//					if(file.getName().contains("5PTrim")){
+//						network.setMax(502.0);
+//						network.setMin(126.0);
+//					}
+//
+//					System.out.println(file.getName());
+//					network.setNewFile("runFilesFolder/" + file.getName());
 //					network.setMethods(false, false, false);
-//					network.runOneYear("X1_" + dataSet, start, 8756, epochs, offset, 24, 1);
+//					long startTime = System.currentTimeMillis();
+//					network.reconfigCsvWriter(file.getName().replace(".csv", ""), null);
+//					network.checkNetwork(start, 8756);
+//					network.runOneYear(i+"EPOCHS_" + file.getName().replace(".csv", "").replace("runFilesFolder/", "newPredictions/").replace("00", ""), start, 8756, i, 0, 24, 1, false);//8756
+//					long endTime = System.currentTimeMillis() - startTime;
+//					network.myCsvWriterOnSelf.writeLineToFile(new String[]{endTime+""});
 //				}
-//				network.setMethods(false, true, false);
-//				network.runOneYear("X1_Curve_" + dataSet, start, 8756, epochs, offset, 1, 1);
-//				network.setMethods(true, true, false);
-//				network.runOneYear("X1_1Historical_Curve_" + dataSet, start, 8756, epochs, offset, 24, 1);
-//				network.setMethods(true, false, true);
-//				network.runOneYear("X1_1Historical_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
-//				network.setMethods(true, true, true);
-//				network.runOneYear("X1_1Historical_Curve_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
-//				network.setMethods(true, false, false);
-//				network.runOneYear("X1_1Historical_" + dataSet, start, 8756, epochs, offset, 24, 1);
-//				network.setMethods(false, false, true);
-//				network.runOneYear("X1_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
-//				network.setMethods(false, true, true);
-//				network.runOneYear("X1_Curve_Skew_" + dataSet, start, 8756, epochs, offset, 24, 1);
 //			}
 //		}
+		
+//		for(int i = 0; i <= 6567; i += 2189){
+//			for (File file : listOfFiles) {
+//				start = i;
+//				if (file.isFile() && !file.getName().equals(".DS_Store")) {
+//					network.setMax(632.0);
+//					network.setMin(61.0);
+//					
+//					System.out.println(file.getName());
+//					network.setNewFile("runFilesFolder/" + file.getName());
+//					network.setMethods(false, false, false);
+//					long startTime = System.currentTimeMillis();
+//					network.checkNetwork(start, 8756);
+//					network.runOneYear(i+"DATASET_" + file.getName().replace(".csv", "").replace("runFilesFolder/", "newPredictions/").replace("00", ""), i, 8756, 200, 0, 24, 1, false);//8756
+//					long endTime = System.currentTimeMillis() - startTime;
+//					network.myCsvWriterOnSelf.writeLineToFile(new String[]{endTime+""});
+//				}
+//			}
+//		}
+//		
+//		System.exit(0);
+//		
+		start = 6567;
+		network.setMax(632);
+		network.setMin(61);
+//		network.setMax(1561.0);
+//		network.setMin(1);
+		String dataSet = "";
+
+		for (File file : listOfFiles) {
+			start = 6567;
+			if (file.isFile() && !file.getName().equals(".DS_Store")) {
+				int offset = 0;
+				int epochs = 200;
+				dataSet = file.getName();
+				System.out.println(dataSet);
+//				network.checkNetwork(start, 8756, false);
+				network.setNewFile("runFilesFolder/" + file.getName());
+				int numberOfPredictionsAhead =24;
+				
+				network.setMethods(false, false, false);
+				network.checkNetwork(start, 8756, true);
+//				network.runOneYear("1HOURAHEAD_X1_" + dataSet, start, 8756, epochs, offset, numberOfPredictionsAhead, 1,false);
+//				
+//				numberOfPredictionsAhead = 24;
+//				if(dataSet.contains("PAPER")){
+//					network.setMethods(false, false, false);
+//					network.runOneYear("X1_" + dataSet, start, 8756, epochs, offset, numberOfPredictionsAhead, 1,false);
+//				}
+//				network.setMethods(false, true, false);
+//				network.runOneYear("X1_Curve_" + dataSet, start, 8756, epochs, offset, numberOfPredictionsAhead, 1,false);
+//				network.setMethods(true, true, false);
+//				network.runOneYear("X1_1Historical_Curve_" + dataSet, start, 8756, epochs, offset, numberOfPredictionsAhead, 1,false);
+//				network.setMethods(true, false, true);
+////				network.checkNetwork(start, 8756, false);
+//				network.runOneYear("X1_1Historical_Skew_" + dataSet, start, 8756, epochs, offset, numberOfPredictionsAhead, 1,false);
+//				network.setMethods(true, true, true);
+//				network.runOneYear("X1_1Historical_Curve_Skew_" + dataSet, start, 8756, epochs, offset, numberOfPredictionsAhead, 1,false);
+//				network.setMethods(true, false, false);
+//				network.runOneYear("X1_1Historical_" + dataSet, start, 8756, epochs, offset, numberOfPredictionsAhead, 1,false);
+//				network.setMethods(false, false, true);
+//				network.runOneYear("X1_Skew_" + dataSet, start, 8756, epochs, offset, numberOfPredictionsAhead, 1,false);
+//				network.setMethods(false, true, true);
+//				network.runOneYear("X1_Curve_Skew_" + dataSet, start, 8756, epochs, offset, numberOfPredictionsAhead, 1,false);
+			}
+		}
 		
 //		start = 6567;
 //		network.setMax(632);

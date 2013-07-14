@@ -16,7 +16,7 @@ public class StatisticsObject{
 	private double belowTenPercentLOW;
 	private double belowTenPercentMIDDLE;
 	private double belowTenPercentHIGH;
-	
+	private double time;
 	
 	public String getFileName() {
 		return fileName;
@@ -95,6 +95,12 @@ public class StatisticsObject{
 	}
 	public void setBelowTenPercentHIGH(double belowTenPercentHIGH) {
 		this.belowTenPercentHIGH = belowTenPercentHIGH;
+	}
+	public double getTime() {
+		return time;
+	}
+	public void setTime(double time) {
+		this.time = time;
 	}
 }
 
